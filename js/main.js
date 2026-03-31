@@ -1,52 +1,50 @@
-// ===================================
+// ============================================
 // ALPHA APPLIED ANALYTICS SOLUTIONS
-// Professional Interactions
-// ===================================
+// Professional JavaScript Interactions
+// ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===== MOBILE MENU =====
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    // ===== MOBILE MENU TOGGLE =====
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
     
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
             this.classList.toggle('active');
+            navMenu.classList.toggle('active');
             
             const spans = this.querySelectorAll('span');
             if (this.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+                spans[0].style.transform = 'rotate(45deg) translateY(10px)';
                 spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+                spans[2].style.transform = 'rotate(-45deg) translateY(-10px)';
             } else {
-                spans[0].style.transform = 'none';
+                spans[0].style.transform = '';
                 spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                spans[2].style.transform = '';
             }
         });
         
-        // Close menu on link click
+        // Close on link click
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                    
-                    const spans = mobileMenuToggle.querySelectorAll('span');
-                    spans[0].style.transform = 'none';
+                    mobileToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans[0].style.transform = '';
                     spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
+                    spans[2].style.transform = '';
                 }
             });
         });
     }
     
-    // ===== SMOOTH SCROLLING =====
+    // ===== SMOOTH SCROLL =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            
             if (href !== '#' && href.startsWith('#')) {
                 const target = document.querySelector(href);
                 if (target) {
@@ -66,22 +64,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ===== NAVBAR SHADOW ON SCROLL =====
     const navbar = document.querySelector('.navbar');
-    
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 20) {
-            navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.12)';
         } else {
-            navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
+            navbar.style.boxShadow = '0 2px 4px rgba(0,0,0,0.08)';
         }
     });
     
-    // ===== FADE-IN ON SCROLL (MINIMAL) =====
+    // ===== FADE IN ANIMATION =====
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -80px 0px'
     };
     
-    const fadeObserver = new IntersectionObserver(function(entries) {
+    const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
@@ -90,47 +87,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Subtle fade-in for cards
-    const fadeElements = document.querySelectorAll('.service-card, .tool-card, .stat-box');
-    fadeElements.forEach((el, index) => {
+    // Animate elements
+    const animateElements = document.querySelectorAll(
+        '.service-card-premium, .tool-card, .stat-card'
+    );
+    
+    animateElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = `all 0.5s ease ${index * 0.05}s`;
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `all 0.6s ease ${index * 0.08}s`;
         fadeObserver.observe(el);
     });
     
-    // ===== ACTIVE NAV LINK =====
-    const sections = document.querySelectorAll('section[id]');
-    
-    window.addEventListener('scroll', () => {
-        let current = '';
-        const scrollPosition = window.pageYOffset;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // ===== STATS COUNTER =====
-    const statsNumbers = document.querySelectorAll('.stat-number');
+    // ===== STATS COUNTER ANIMATION =====
+    const statNumbers = document.querySelectorAll('.stat-number');
     
     const animateCounter = (element) => {
         const target = element.textContent;
-        const isPercentage = target.includes('%');
+        const hasPercent = target.includes('%');
         const hasK = target.includes('K');
         const hasPlus = target.includes('+');
+        const hasSlash = target.includes('/');
+        
+        if (hasSlash) return; // Don't animate "24/7"
         
         let numericValue;
         if (hasK) {
@@ -139,10 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
             numericValue = parseFloat(target.replace(/[^\d.]/g, ''));
         }
         
-        if (isNaN(numericValue) || target.includes('/')) return;
+        if (isNaN(numericValue)) return;
         
-        const duration = 1500;
-        const steps = 50;
+        const duration = 1800;
+        const steps = 60;
         const increment = numericValue / steps;
         let current = 0;
         
@@ -156,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let displayValue;
             if (hasK) {
                 displayValue = (current / 1000).toFixed(1) + 'K' + (hasPlus ? '+' : '');
-            } else if (isPercentage) {
+            } else if (hasPercent) {
                 displayValue = current.toFixed(1) + '%';
             } else {
                 displayValue = Math.floor(current).toLocaleString();
@@ -174,12 +153,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 statsObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.6 });
     
-    statsNumbers.forEach(stat => statsObserver.observe(stat));
+    statNumbers.forEach(stat => statsObserver.observe(stat));
+    
+    // ===== ACTIVE NAV LINK =====
+    const sections = document.querySelectorAll('section[id]');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.pageYOffset >= sectionTop && 
+                window.pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
     
     // ===== ACCESSIBILITY =====
-    document.querySelectorAll('.btn, .nav-link').forEach(element => {
+    document.querySelectorAll('.btn-premium, .nav-link').forEach(element => {
         element.addEventListener('keypress', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -188,16 +190,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===== PAGE LOAD =====
+    // ===== PAGE LOAD FADE IN =====
     window.addEventListener('load', function() {
         document.body.style.opacity = '0';
         setTimeout(() => {
-            document.body.style.transition = 'opacity 0.4s ease';
+            document.body.style.transition = 'opacity 0.5s ease';
             document.body.style.opacity = '1';
-        }, 50);
+        }, 100);
     });
     
     // ===== CONSOLE BRANDING =====
-    console.log('%cAlpha Applied Analytics Solutions', 'color: #2E5C8A; font-size: 20px; font-weight: bold;');
-    console.log('%cAI-Powered Legal & Financial Analytics', 'color: #6B7280; font-size: 14px;');
+    console.log('%cAlpha Applied Analytics Solutions', 
+        'color: #1A5490; font-size: 20px; font-weight: bold;');
+    console.log('%cAI-Powered Legal & Financial Analytics', 
+        'color: #6B7280; font-size: 14px;');
 });
