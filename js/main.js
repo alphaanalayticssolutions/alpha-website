@@ -1,11 +1,11 @@
 // ===================================
-// ALPHA ANALYTICS SOLUTIONS
-// Main JavaScript File
+// ALPHA APPLIED ANALYTICS SOLUTIONS
+// Professional Interactions
 // ===================================
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===== MOBILE MENU TOGGLE =====
+    // ===== MOBILE MENU =====
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
@@ -14,12 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
             this.classList.toggle('active');
             
-            // Animate hamburger icon
             const spans = this.querySelectorAll('span');
             if (this.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translateY(10px)';
+                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
                 spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translateY(-10px)';
+                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
             } else {
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Close menu when clicking on a link
+        // Close menu on link click
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Only prevent default for anchor links on the same page
             if (href !== '#' && href.startsWith('#')) {
                 const target = document.querySelector(href);
                 if (target) {
@@ -66,30 +64,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===== NAVBAR SCROLL EFFECT =====
+    // ===== NAVBAR SHADOW ON SCROLL =====
     const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
     
     window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        // Add shadow on scroll
-        if (currentScroll > 20) {
-            navbar.style.boxShadow = '0 2px 20px rgba(15, 23, 42, 0.1)';
+        if (window.pageYOffset > 20) {
+            navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
         } else {
-            navbar.style.boxShadow = 'none';
+            navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
         }
-        
-        lastScroll = currentScroll;
     });
     
-    // ===== SCROLL ANIMATIONS =====
+    // ===== FADE-IN ON SCROLL (MINIMAL) =====
     const observerOptions = {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
     
-    const observer = new IntersectionObserver(function(entries) {
+    const fadeObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
@@ -98,80 +90,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Elements to animate on scroll
-    const animateElements = document.querySelectorAll('.service-card, .traditional-card, .step-card, .why-feature, .tech-card, .guarantee-card, .visual-card');
-    
-    animateElements.forEach((el, index) => {
+    // Subtle fade-in for cards
+    const fadeElements = document.querySelectorAll('.service-card, .tool-card, .stat-box');
+    fadeElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `all 0.6s ease ${index * 0.1}s`;
-        observer.observe(el);
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `all 0.5s ease ${index * 0.05}s`;
+        fadeObserver.observe(el);
     });
     
-    // ===== STATS COUNTER ANIMATION =====
-    const stats = document.querySelectorAll('.stat-number, .overview-number, .visual-number');
-    
-    const animateCounter = (element) => {
-        const target = element.textContent;
-        const isPercentage = target.includes('%');
-        const isTime = target.includes('/');
-        const hasK = target.includes('K');
-        const hasDollar = target.includes('$');
-        
-        // Extract numeric value
-        let numericValue;
-        if (hasK) {
-            numericValue = parseFloat(target.replace(/[^\d.]/g, '')) * 1000;
-        } else if (hasDollar) {
-            numericValue = parseFloat(target.replace(/[^\d.]/g, ''));
-        } else {
-            numericValue = parseFloat(target.replace(/[^\d.]/g, ''));
-        }
-        
-        if (isNaN(numericValue) || isTime) return;
-        
-        const duration = 2000;
-        const steps = 60;
-        const increment = numericValue / steps;
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= numericValue) {
-                current = numericValue;
-                clearInterval(timer);
-            }
-            
-            let displayValue;
-            if (hasK) {
-                displayValue = (current / 1000).toFixed(1) + 'K+';
-            } else if (hasDollar) {
-                displayValue = '$' + Math.floor(current).toLocaleString() + '+';
-            } else if (isPercentage) {
-                displayValue = current.toFixed(1) + '%';
-            } else {
-                displayValue = Math.floor(current).toLocaleString();
-            }
-            
-            element.textContent = displayValue;
-        }, duration / steps);
-    };
-    
-    const statsObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.dataset.animated) {
-                entry.target.dataset.animated = 'true';
-                animateCounter(entry.target);
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    stats.forEach(stat => {
-        statsObserver.observe(stat);
-    });
-    
-    // ===== ACTIVE NAV LINK HIGHLIGHT =====
+    // ===== ACTIVE NAV LINK =====
     const sections = document.querySelectorAll('section[id]');
     
     window.addEventListener('scroll', () => {
@@ -195,113 +123,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===== CARD HOVER EFFECTS =====
-    const cards = document.querySelectorAll('.service-card, .traditional-card, .step-card');
+    // ===== STATS COUNTER =====
+    const statsNumbers = document.querySelectorAll('.stat-number');
     
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
+    const animateCounter = (element) => {
+        const target = element.textContent;
+        const isPercentage = target.includes('%');
+        const hasK = target.includes('K');
+        const hasPlus = target.includes('+');
         
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 30;
-            const rotateY = (centerX - x) / 30;
-            
-            // Subtle 3D tilt effect
-            if (window.innerWidth > 1024) {
-                this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        let numericValue;
+        if (hasK) {
+            numericValue = parseFloat(target.replace(/[^\d.]/g, '')) * 1000;
+        } else {
+            numericValue = parseFloat(target.replace(/[^\d.]/g, ''));
+        }
+        
+        if (isNaN(numericValue) || target.includes('/')) return;
+        
+        const duration = 1500;
+        const steps = 50;
+        const increment = numericValue / steps;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= numericValue) {
+                current = numericValue;
+                clearInterval(timer);
             }
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
-    });
-    
-    // ===== FORM VALIDATION (if contact form exists) =====
-    const contactForm = document.querySelector('#contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
             
-            // Basic validation
-            const inputs = this.querySelectorAll('input[required], textarea[required]');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = '#EF4444';
-                } else {
-                    input.style.borderColor = '#E2E8F0';
-                }
-            });
-            
-            if (isValid) {
-                // Show success message
-                alert('Thank you for your inquiry! We will get back to you shortly.');
-                this.reset();
+            let displayValue;
+            if (hasK) {
+                displayValue = (current / 1000).toFixed(1) + 'K' + (hasPlus ? '+' : '');
+            } else if (isPercentage) {
+                displayValue = current.toFixed(1) + '%';
             } else {
-                alert('Please fill in all required fields.');
+                displayValue = Math.floor(current).toLocaleString();
             }
-        });
-    }
-    
-    // ===== PARALLAX EFFECT ON HERO =====
-    const heroSection = document.querySelector('.hero');
-    
-    if (heroSection) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = heroSection.querySelectorAll('.hero-content, .hero-bg-gradient');
             
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-    }
+            element.textContent = displayValue;
+        }, duration / steps);
+    };
     
-    // ===== LAZY LOAD IMAGES =====
-    const images = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                animateCounter(entry.target);
+                statsObserver.unobserve(entry.target);
             }
         });
-    });
+    }, { threshold: 0.5 });
     
-    images.forEach(img => imageObserver.observe(img));
+    statsNumbers.forEach(stat => statsObserver.observe(stat));
     
-    // ===== PERFORMANCE OPTIMIZATION =====
-    // Debounce function for scroll events
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
-    
-    // ===== ACCESSIBILITY ENHANCEMENTS =====
-    // Add keyboard navigation support
+    // ===== ACCESSIBILITY =====
     document.querySelectorAll('.btn, .nav-link').forEach(element => {
         element.addEventListener('keypress', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -311,43 +188,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===== CONSOLE BRANDING =====
-    console.log('%cALPHA ANALYTICS SOLUTIONS', 'color: #D4AF37; font-size: 24px; font-weight: bold;');
-    console.log('%cAI-Powered Legal & Financial Analytics', 'color: #1E3A5F; font-size: 14px;');
-    console.log('%cWebsite built with precision and elegance', 'color: #475569; font-size: 12px;');
-    
-});
-
-// ===== PAGE LOAD ANIMATIONS =====
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-    
-    // Fade in page content
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.6s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-// ===== ERROR HANDLING =====
-window.addEventListener('error', function(e) {
-    console.error('Page error:', e.message);
-});
-
-// ===== PERFORMANCE MONITORING =====
-if ('PerformanceObserver' in window) {
-    const perfObserver = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-            if (entry.entryType === 'largest-contentful-paint') {
-                console.log('LCP:', entry.renderTime || entry.loadTime);
-            }
-        }
+    // ===== PAGE LOAD =====
+    window.addEventListener('load', function() {
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            document.body.style.transition = 'opacity 0.4s ease';
+            document.body.style.opacity = '1';
+        }, 50);
     });
     
-    try {
-        perfObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-    } catch (e) {
-        // Browser doesn't support this metric
-    }
-}
+    // ===== CONSOLE BRANDING =====
+    console.log('%cAlpha Applied Analytics Solutions', 'color: #2E5C8A; font-size: 20px; font-weight: bold;');
+    console.log('%cAI-Powered Legal & Financial Analytics', 'color: #6B7280; font-size: 14px;');
+});

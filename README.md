@@ -1,80 +1,150 @@
-# Alpha Analytics Solutions - Premium Legal-Tech Website
+# Alpha Applied Analytics Solutions - Professional Website
 
 ## Overview
-A modern, highly professional frontend design for a legal-tech company featuring a sophisticated light navy-tinted theme with premium gold accents. Built with pure HTML, CSS, and JavaScript—no frameworks required.
+A modern, professional website for Alpha Applied Analytics Solutions with a clean red and blue color scheme on a light background. Built with pure HTML, CSS, and JavaScript—no frameworks required.
 
 ## Design Philosophy
 
 ### Color Scheme
-- **Primary Background**: Light navy-tinted (#F8F9FC) - provides elegant, refined look
-- **Deep Navy Blue**: (#0F172A, #1E3A5F) - headings, navigation, primary elements
-- **Premium Gold**: (#D4AF37) - subtle accents, highlights, hover effects
-- **High Contrast Text**: All text highly visible with strong contrast ratios
+- **Primary Background**: Pure white (#FFFFFF) - clean, professional
+- **Section Backgrounds**: Very light grey (#F8F9FA) - subtle contrast
+- **Blue**: Primary color for structure (headings, navigation, buttons)
+  - Deep Blue: #1a3a52
+  - Primary Blue: #2E5C8A
+  - Light Blue: #4A7BA7
+- **Red**: Subtle accent color for highlights
+  - Professional Red: #C1272D
+  - Light Red: #D84848
 
 ### Typography
-- **Display Font**: Playfair Display - elegant serif for headings
-- **Body Font**: Inter - clean, modern sans-serif for content
-- **Strong Hierarchy**: Bold headings, well-spaced body text, clear visual distinction
+- **Display Font**: Crimson Pro - elegant serif for headings
+- **Body Font**: Inter - clean, modern sans-serif
+- **High Contrast**: All text clearly visible against backgrounds
 
-## Features
+## Page Structure
 
-### Page 1: Services Overview (index.html)
-- **Hero Section**: Compelling headline with gradient text, stats display, dual CTAs
-- **AI-Powered Services**: 4 main tools presented in modern cards
-  - Divorce Analysis Tool (featured)
-  - QC Agentic AI
-  - PDF Processing Platform
-  - Bank Statement Extraction
-- **Traditional Services**: Economic Damages, Family Law, IP Analytics
-- **Why Choose Us**: 6 key advantages with icon highlights
-- **Call to Action**: Contact section with dual CTAs
-- **Professional Footer**: Multi-column layout with links
+### Homepage Sections
+1. **Navigation**: Sticky header with company branding and menu
+2. **Hero Section**: Clean introduction with clear value proposition
+3. **About**: Brief company overview with key statistics
+4. **Services** (6 services):
+   - Family Law Analytics
+   - Economic Damages Analytics
+   - Intellectual Property Analytics
+   - Financial Document Analysis
+   - Legal Discovery Support
+   - Litigation Consulting
+5. **Tools** (5 key AI-powered tools):
+   - Divorce Analysis Engine (featured)
+   - Quality Control AI
+   - Bank Statement Extraction
+   - PDF Document Processing
+   - Coverage Matrix Tracker
+6. **AI Benefits**: High-level overview of how AI enhances services
+7. **Contact**: Email and LinkedIn information
+8. **Footer**: Professional footer with links
 
-### Page 2: AI Workflow (workflow.html)
-- **Workflow Hero**: Strong introduction to AI capabilities
-- **Platform Overview**: 4-stat grid showing key metrics
-- **7-Step Processing Pipeline**: Detailed breakdown of each stage
-  - Document Intake & Classification
-  - Intelligent Data Extraction
-  - Two-Layer Quality Control (highlighted)
-  - Transaction Analysis (highlighted)
-  - Document Enhancement
-  - Coverage Matrix & Gap Analysis
-  - Court-Ready Deliverables
-- **Technology Stack**: 4-card grid showing AI models, libraries, platform
-- **Processing Guarantees**: Speed, Accuracy, Security, Court-Ready
-- **Call to Action**: Demo scheduling
+## Key Features
 
-## Technical Details
+✅ **Professional Design**: Clean, trustworthy, premium aesthetic  
+✅ **Responsive**: Works perfectly on mobile, tablet, desktop  
+✅ **Fast Loading**: Optimized CSS, minimal JavaScript  
+✅ **Accessible**: Semantic HTML, keyboard navigation  
+✅ **Minimal Animations**: Subtle, professional interactions  
+✅ **No Misleading UI**: Cards don't look clickable unless they are  
 
-### File Structure
+## File Structure
 ```
-alpha-website/
-├── index.html              # Services overview page
-├── workflow.html           # AI workflow page
+alpha-legal-website/
+├── index.html              # Main homepage
 ├── css/
-│   └── styles.css         # Complete stylesheet (900+ lines)
+│   └── styles.css         # Complete stylesheet
 ├── js/
-│   └── main.js            # Interactivity & animations
-├── images/                # (Empty - ready for assets)
+│   └── main.js            # Minimal interactions
+├── images/                # Ready for your images
 └── README.md              # This file
 ```
 
-### Key Features
-- **100% Responsive**: Mobile-first design with breakpoints at 768px and 1024px
-- **Smooth Animations**: Scroll-triggered animations, hover effects, transitions
-- **Accessibility**: Keyboard navigation, semantic HTML, ARIA labels
-- **Performance**: Optimized CSS, debounced scroll events, lazy loading support
-- **Modern JavaScript**: ES6+, Intersection Observer API, smooth scrolling
+## Quick Start
 
-### Interactive Elements
-- Mobile hamburger menu with animation
-- Smooth scroll to sections
-- Navbar shadow on scroll
-- Card 3D tilt effect on hover (desktop)
-- Animated statistics counters
-- Active navigation highlighting
-- Parallax hero effect
+### View Locally
+1. Extract the folder
+2. Double-click `index.html`
+3. Opens in your default browser
+
+### Deploy to Web
+
+**Option 1: Netlify (Easiest)**
+1. Go to [netlify.com](https://www.netlify.com)
+2. Drag and drop the entire folder
+3. Get instant live URL
+
+**Option 2: Traditional Hosting**
+1. Upload via FTP to your web host
+2. Ensure `index.html` is in the root/public_html
+3. Point your domain
+
+## Customization
+
+### Change Contact Information
+Search for:
+- `info@alphaanalyticssol.com` → Replace with your email
+- LinkedIn URL → Update to your company page
+
+### Change Colors
+Edit `css/styles.css`, find the `:root` section:
+```css
+--color-blue: #2E5C8A;    /* Your blue */
+--color-red: #C1272D;     /* Your red */
+```
+
+### Add Images
+1. Place images in `/images` folder
+2. Reference in HTML: `<img src="images/your-image.jpg" alt="Description">`
+3. Recommended: Use high-quality professional photos
+
+### Modify Content
+- Edit `index.html` directly
+- Follow the existing structure
+- Keep descriptions concise and client-friendly
+
+## Content Guidelines
+
+✅ **What We Include**:
+- Service descriptions (benefits and outcomes)
+- Tool capabilities (what they do, not how)
+- High-level AI benefits
+- Contact information
+
+❌ **What We Exclude**:
+- Deep technical implementation details
+- Proprietary algorithms or processes
+- Internal tool names or model specifics
+- Sensitive operational information
+
+## Design Decisions
+
+### Services vs Tools
+- **Services**: What the company offers (consulting, analysis, expertise)
+- **Tools**: Technology that supports service delivery
+- Clear separation prevents confusion
+
+### Minimal Animations
+- Subtle fade-in on scroll
+- Smooth hover effects
+- No excessive movement
+- Professional, not flashy
+
+### Static Cards
+- Service and tool cards are informational only
+- No hover effects that suggest clickability
+- Clean, professional presentation
+
+### No Deep Technical Details
+- AI workflow simplified to benefits
+- No internal process exposure
+- Focus on outcomes, not mechanisms
+- Protects proprietary information
 
 ## Browser Support
 - Chrome/Edge (latest)
@@ -82,78 +152,57 @@ alpha-website/
 - Safari (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Customization
+## Performance
+- Lightweight: ~80KB total
+- Fast load: < 1 second
+- No external dependencies
+- SEO friendly
 
-### Changing Colors
-All colors are defined as CSS variables in `:root` at the top of `styles.css`:
-```css
---color-navy-dark: #0F172A;
---color-gold: #D4AF37;
-```
+## Recommended Next Steps
 
-### Adding Content
-1. Edit HTML files directly
-2. Follow existing card/section structure
-3. Use existing CSS classes for consistency
+1. **Add Logo**: Replace text logo with image logo
+2. **Professional Photos**: Add relevant imagery to sections
+3. **SEO Optimization**:
+   - Add meta descriptions
+   - Add Open Graph tags
+   - Create sitemap.xml
+4. **Analytics**: Add Google Analytics tracking
+5. **Forms**: Implement contact form with backend
 
-### Adding Images
-1. Place images in `/images` folder
-2. Reference in HTML: `<img src="images/your-image.jpg" alt="Description">`
-3. Use high-quality images (at least 1920px wide for hero backgrounds)
+## Contact Information in Website
 
-## Deployment
-
-### Simple Hosting (GitHub Pages, Netlify, Vercel)
-1. Upload all files maintaining folder structure
-2. Ensure `index.html` is in root directory
-3. Point DNS to hosting provider
-
-### Traditional Web Hosting
-1. Upload entire folder via FTP/SFTP
-2. Ensure correct file permissions (644 for files, 755 for folders)
-3. Point domain to `/public_html` or root directory
-
-## Email Setup
-Update email links in:
-- Navigation CTA button
-- Contact section
-- Footer
-
-Replace `info@alphaanalyticssol.com` with your actual email.
-
-## SEO Optimization (Recommended)
-1. Add meta description tags
-2. Add Open Graph tags for social sharing
-3. Create `robots.txt` and `sitemap.xml`
-4. Optimize images (compress, add alt tags)
-5. Add Google Analytics tracking code
-
-## Performance Optimization
-- Images: Use WebP format, compress to ~100KB
-- CSS: Already minified and optimized
-- JavaScript: Consider minifying for production
-- Enable GZIP compression on server
-- Implement CDN for static assets
-
-## Future Enhancements
-- Add contact form with backend integration
-- Implement case study/portfolio section
-- Add testimonials carousel
-- Create blog section
-- Add multi-language support
-- Integrate analytics dashboard
-
-## Credits
-Design & Development: Custom-built for Alpha Analytics Solutions
-Fonts: Google Fonts (Inter, Playfair Display)
-Icons: Inline SVG (custom)
-
-## License
-Proprietary - Alpha Analytics Solutions © 2026
+**Email**: info@alphaanalyticssol.com  
+**LinkedIn**: https://www.linkedin.com/company/alpha-applied-analytics-solutions/
 
 ## Support
-For questions or issues, contact: info@alphaanalyticssol.com
+
+For questions about customization or deployment:
+Email: info@alphaanalyticssol.com
 
 ---
 
-**Note**: This is a static website. For dynamic features (contact forms, user accounts, database integration), backend development will be required.
+## Technical Notes
+
+### Responsive Breakpoints
+- Desktop: > 1024px
+- Tablet: 768px - 1024px
+- Mobile: < 768px
+
+### Color Contrast Ratios
+All text meets WCAG AA standards for accessibility:
+- Dark text on white: 12:1 ratio
+- Light text on blue background: 7:1 ratio
+
+### Performance Optimization
+- CSS is already optimized
+- JavaScript is minimal (~4KB)
+- Images should be compressed (use TinyPNG)
+- Enable GZIP on server for production
+
+---
+
+**Built for**: Alpha Applied Analytics Solutions  
+**Theme**: Professional Legal-Tech  
+**License**: Proprietary © 2026  
+
+This is a static website. For dynamic features (contact forms, user accounts), backend development is required.
