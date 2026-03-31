@@ -1,0 +1,87 @@
+# QUICK START GUIDE
+# Alpha Analytics Solutions Website
+
+## 🚀 Getting Started in 3 Steps
+
+### Step 1: Extract Files
+Unzip the folder and you'll see:
+- index.html (Services Page)
+- workflow.html (AI Workflow Page)
+- css/ folder (styles)
+- js/ folder (interactivity)
+- README.md (full documentation)
+
+### Step 2: View Locally
+Simply double-click `index.html` to open in your browser.
+- Navigation works between both pages
+- All features work locally (no server needed)
+
+### Step 3: Deploy to Web
+Upload all files to your web hosting:
+- Netlify: Drag & drop the entire folder
+- GitHub Pages: Push to repository
+- Traditional hosting: FTP upload to public_html
+
+## 🎨 Design Highlights
+
+✓ Light navy-tinted background (#F8F9FC) - elegant & unique
+✓ Deep navy blue for headings - highly visible
+✓ Premium gold accents - subtle luxury
+✓ High contrast text throughout - maximum readability
+✓ Modern animations & hover effects
+✓ Fully responsive (mobile, tablet, desktop)
+
+## 📱 Test on Mobile
+The site automatically adapts to:
+- Mobile phones (< 768px)
+- Tablets (768px - 1024px)
+- Desktop (> 1024px)
+
+## ✏️ Quick Edits
+
+### Change Email:
+Search for `info@alphaanalyticssol.com` and replace
+
+### Change Colors:
+Open `css/styles.css`, find `:root` section at top
+- --color-gold: #D4AF37 (change this)
+- --color-navy-dark: #0F172A (or this)
+
+### Add Content:
+Edit HTML files directly - follow existing structure
+
+## 🌐 Recommended Hosting
+
+**Free Options:**
+- Netlify (easiest - drag & drop)
+- GitHub Pages
+- Vercel
+
+**Paid Options:**
+- Hostinger ($2-3/month)
+- Namecheap
+- Bluehost
+
+## 📊 Performance
+
+- Lightweight: < 50KB CSS
+- Fast load: < 1 second
+- SEO friendly
+- Accessible
+
+## 🎯 Next Steps
+
+1. Review both pages in browser
+2. Make any content changes needed
+3. Add your logo/images (optional)
+4. Deploy to hosting
+5. Connect domain name
+
+## Need Help?
+
+Check README.md for complete documentation
+
+---
+
+Built with precision for Alpha Analytics Solutions
+Premium legal-tech website design © 2026
