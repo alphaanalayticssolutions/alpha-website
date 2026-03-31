@@ -8,23 +8,24 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-wrapper">
+            <div class="nav-content">
                 <div class="brand">
-                    <h1 class="brand-name">ALPHA APPLIED ANALYTICS</h1>
+                    <img src="images/logo.png" alt="Alpha Analytics" class="logo">
+                    <span class="brand-text">ALPHA APPLIED ANALYTICS</span>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#tools" class="nav-link">Tools</a></li>
-                    <li><a href="#contact" class="nav-link nav-btn">Contact Us</a></li>
+                    <li><a href="#contact" class="nav-btn">Contact Us</a></li>
                 </ul>
-                <button class="mobile-toggle" aria-label="Toggle navigation">
+                <button class="mobile-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -33,45 +34,45 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Background Image -->
-    <section id="home" class="hero-section">
-        <div class="hero-bg-image"></div>
+    <!-- Hero with Image Background -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">AI-Powered Legal & Financial Analytics</h1>
-                <p class="hero-subtitle">
+                <p class="hero-text">
                     Expert forensic analysis and document processing powered by cutting-edge artificial intelligence. 
                     Delivering court-ready insights for complex litigation matters.
                 </p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-premium btn-red">Schedule Consultation</a>
-                    <a href="#services" class="btn-premium btn-white">Our Services</a>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-red">Schedule Consultation</a>
+                    <a href="#services" class="btn btn-outline">Our Services</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about-section">
+    <section class="about">
         <div class="container">
-            <div class="about-wrapper">
+            <div class="about-inner">
                 <h2 class="section-title">Transforming Legal Analytics with AI</h2>
-                <p class="about-text">
+                <p class="about-desc">
                     Alpha Applied Analytics Solutions combines advanced artificial intelligence with deep forensic expertise 
-                    to deliver precision analysis, strategic intelligence, and court-ready documentation for complex legal matters.
+                    to deliver precision analysis and court-ready documentation for complex legal matters.
                 </p>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number red">99.9%</div>
+                <div class="stats">
+                    <div class="stat-box red-border">
+                        <div class="stat-num red-text">99.9%</div>
                         <div class="stat-label">Accuracy Rate</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number blue">50K+</div>
+                    <div class="stat-box blue-border">
+                        <div class="stat-num blue-text">50K+</div>
                         <div class="stat-label">Documents Processed</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number red">24/7</div>
+                    <div class="stat-box red-border">
+                        <div class="stat-num red-text">24/7</div>
                         <div class="stat-label">AI Processing</div>
                     </div>
                 </div>
@@ -79,184 +80,186 @@
         </div>
     </section>
 
-    <!-- Services Section with Image Backgrounds -->
-    <section id="services" class="services-section">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-head">
                 <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive legal analytics and financial forensics expertise</p>
+                <p class="section-sub">Comprehensive legal analytics and financial forensics expertise</p>
             </div>
 
             <div class="services-grid">
-                <!-- Service 1: Divorce -->
-                <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80');">
+                <!-- Blue Cards -->
+                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80');">
                     <div class="service-overlay blue-overlay"></div>
-                    <div class="service-content">
+                    <div class="service-text">
                         <div class="service-icon">⚖️</div>
-                        <h3 class="service-title">Divorce & Family Law</h3>
-                        <p class="service-desc">Expert analysis for property division, hidden income detection, and court-ready forensic reports.</p>
+                        <h3>Divorce & Family Law</h3>
+                        <p>Expert analysis for property division, hidden income detection, and court-ready forensic reports.</p>
                     </div>
                 </div>
 
-                <!-- Service 2: Economic Damages -->
-                <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1554224311-beee415c201f?w=800&q=80');">
-                    <div class="service-overlay red-overlay"></div>
-                    <div class="service-content">
-                        <div class="service-icon">📊</div>
-                        <h3 class="service-title">Economic Damages</h3>
-                        <p class="service-desc">Precise damage calculations, lost profits analysis, and business valuation for litigation.</p>
-                    </div>
-                </div>
-
-                <!-- Service 3: IP Analytics -->
-                <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80');">
+                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80');">
                     <div class="service-overlay blue-overlay"></div>
-                    <div class="service-content">
+                    <div class="service-text">
                         <div class="service-icon">💡</div>
-                        <h3 class="service-title">Intellectual Property</h3>
-                        <p class="service-desc">Comprehensive IP valuation, infringement analysis, and damage assessment for patents and trademarks.</p>
+                        <h3>Intellectual Property</h3>
+                        <p>Comprehensive IP valuation, infringement analysis, and damage assessment for patents.</p>
                     </div>
                 </div>
 
-                <!-- Service 4: Document Analysis -->
-                <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&q=80');">
-                    <div class="service-overlay red-overlay"></div>
-                    <div class="service-content">
-                        <div class="service-icon">📄</div>
-                        <h3 class="service-title">Document Analysis</h3>
-                        <p class="service-desc">AI-powered extraction and analysis of financial records into structured court-ready formats.</p>
-                    </div>
-                </div>
-
-                <!-- Service 5: Discovery Support -->
-                <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80');">
+                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80');">
                     <div class="service-overlay blue-overlay"></div>
-                    <div class="service-content">
+                    <div class="service-text">
                         <div class="service-icon">🔍</div>
-                        <h3 class="service-title">Legal Discovery</h3>
-                        <p class="service-desc">Streamlined document review, classification, and gap analysis for complete production.</p>
+                        <h3>Legal Discovery</h3>
+                        <p>Streamlined document review, classification, and gap analysis for complete production.</p>
                     </div>
                 </div>
 
-                <!-- Service 6: Litigation Support -->
-                <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80');">
+                <!-- Red Cards -->
+                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1554224311-beee415c201f?w=800&q=80');">
                     <div class="service-overlay red-overlay"></div>
-                    <div class="service-content">
+                    <div class="service-text">
+                        <div class="service-icon">📊</div>
+                        <h3>Economic Damages</h3>
+                        <p>Precise damage calculations, lost profits analysis, and business valuation for litigation.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&q=80');">
+                    <div class="service-overlay red-overlay"></div>
+                    <div class="service-text">
+                        <div class="service-icon">📄</div>
+                        <h3>Document Analysis</h3>
+                        <p>AI-powered extraction and analysis of financial records into structured formats.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80');">
+                    <div class="service-overlay red-overlay"></div>
+                    <div class="service-text">
                         <div class="service-icon">🎯</div>
-                        <h3 class="service-title">Litigation Support</h3>
-                        <p class="service-desc">Strategic consulting, expert testimony preparation, and comprehensive financial investigation.</p>
+                        <h3>Litigation Support</h3>
+                        <p>Strategic consulting, expert testimony preparation, and financial investigation.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tools Section with Visual Icons -->
-    <section id="tools" class="tools-section">
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
         <div class="container">
-            <div class="section-header">
+            <div class="section-head">
                 <h2 class="section-title">AI-Powered Tools</h2>
-                <p class="section-subtitle">Advanced technology for efficient legal analytics</p>
+                <p class="section-sub">Advanced technology for efficient legal analytics</p>
             </div>
 
             <div class="tools-grid">
-                <!-- Tool 1: Divorce Engine -->
-                <div class="tool-card featured">
-                    <div class="tool-icon-box red-bg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <!-- Red Featured -->
+                <div class="tool-card red-card">
+                    <div class="tool-icon red-icon">
+                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="8" r="4"/>
                             <path d="M20 21a8 8 0 10-16 0"/>
-                            <line x1="12" y1="12" x2="12" y2="16"/>
-                            <line x1="10" y1="14" x2="14" y2="14"/>
                         </svg>
                     </div>
-                    <h3 class="tool-title">Divorce Analysis Engine</h3>
-                    <p class="tool-desc">AI-powered forensic analysis detecting hidden income, spending patterns, and interbank transfers with six-tab reports.</p>
-                    <span class="tool-badge red-badge">Court-Ready</span>
+                    <h3>Divorce Analysis Engine</h3>
+                    <p>AI-powered forensic analysis detecting hidden income and spending patterns with six-tab reports.</p>
+                    <span class="badge red-badge">Court-Ready</span>
                 </div>
 
-                <!-- Tool 2: QC AI -->
-                <div class="tool-card">
-                    <div class="tool-icon-box blue-bg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <!-- Blue Cards -->
+                <div class="tool-card blue-card">
+                    <div class="tool-icon blue-icon">
+                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
                             <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
                     </div>
-                    <h3 class="tool-title">Quality Control AI</h3>
-                    <p class="tool-desc">Two-layer validation combining rule-based checks with AI review for forensic-grade accuracy.</p>
-                    <span class="tool-badge blue-badge">99.9% Accurate</span>
+                    <h3>Quality Control AI</h3>
+                    <p>Two-layer validation combining rule-based checks with AI review for forensic-grade accuracy.</p>
+                    <span class="badge blue-badge">99.9% Accurate</span>
                 </div>
 
-                <!-- Tool 3: Bank Extraction -->
-                <div class="tool-card">
-                    <div class="tool-icon-box blue-bg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="tool-card blue-card">
+                    <div class="tool-icon blue-icon">
+                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="7" width="20" height="14" rx="2"/>
                             <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
                         </svg>
                     </div>
-                    <h3 class="tool-title">Bank Extraction</h3>
-                    <p class="tool-desc">Automated transaction data extraction with multi-format support and balance reconciliation.</p>
-                    <span class="tool-badge blue-badge">Multi-Format</span>
+                    <h3>Bank Extraction</h3>
+                    <p>Automated transaction data extraction with multi-format support and balance reconciliation.</p>
+                    <span class="badge blue-badge">Multi-Format</span>
                 </div>
 
-                <!-- Tool 4: PDF Processing -->
-                <div class="tool-card">
-                    <div class="tool-icon-box red-bg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="tool-card red-card">
+                    <div class="tool-icon red-icon">
+                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
                             <polyline points="14 2 14 8 20 8"/>
                         </svg>
                     </div>
-                    <h3 class="tool-title">PDF Processing</h3>
-                    <p class="tool-desc">Intelligent document enhancement, classification, splitting, and Bates stamping.</p>
-                    <span class="tool-badge red-badge">Intelligent</span>
+                    <h3>PDF Processing</h3>
+                    <p>Intelligent document enhancement, classification, splitting, and Bates stamping.</p>
+                    <span class="badge red-badge">Intelligent</span>
                 </div>
 
-                <!-- Tool 5: Coverage Tracker -->
-                <div class="tool-card">
-                    <div class="tool-icon-box blue-bg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="tool-card blue-card">
+                    <div class="tool-icon blue-icon">
+                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="3" width="7" height="7"/>
                             <rect x="14" y="3" width="7" height="7"/>
                             <rect x="14" y="14" width="7" height="7"/>
                             <rect x="3" y="14" width="7" height="7"/>
                         </svg>
                     </div>
-                    <h3 class="tool-title">Coverage Tracker</h3>
-                    <p class="tool-desc">Visualizes document coverage across time periods and identifies gaps in production.</p>
-                    <span class="tool-badge blue-badge">Gap Analysis</span>
+                    <h3>Coverage Tracker</h3>
+                    <p>Visualizes document coverage across time periods and identifies gaps in production.</p>
+                    <span class="badge blue-badge">Gap Analysis</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="contact-bg-overlay"></div>
+    <section id="contact" class="contact">
+        <div class="contact-bg"></div>
         <div class="container">
-            <div class="contact-wrapper">
+            <div class="contact-inner">
                 <h2 class="section-title white">Ready to Get Started?</h2>
-                <p class="contact-intro">Contact us to discuss how our AI-powered solutions can support your legal matters</p>
-                <div class="contact-grid">
+                <p class="contact-desc">Contact us to discuss how our AI-powered solutions can support your legal matters</p>
+                
+                <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div>
                             <div class="contact-label">Email</div>
                             <a href="mailto:info@alphaanalyticssol.com" class="contact-link">info@alphaanalyticssol.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </div>
+                        <div>
                             <div class="contact-label">LinkedIn</div>
                             <a href="https://www.linkedin.com/company/alpha-applied-analytics-solutions/" target="_blank" class="contact-link">Connect with us</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="contact-cta">
-                    <a href="mailto:info@alphaanalyticssol.com" class="btn-premium btn-red-large">Schedule Consultation</a>
+                    <a href="mailto:info@alphaanalyticssol.com" class="btn btn-red-large">Schedule Consultation</a>
                 </div>
             </div>
         </div>
@@ -268,7 +271,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-name">ALPHA APPLIED ANALYTICS SOLUTIONS</div>
-                    <p class="footer-tagline">AI-Powered Legal & Financial Analytics</p>
+                    <p class="footer-tag">AI-Powered Legal & Financial Analytics</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">

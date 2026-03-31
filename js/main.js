@@ -1,8 +1,7 @@
 // ALPHA APPLIED ANALYTICS SOLUTIONS
-// Professional JavaScript
+// JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -17,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Navbar shadow on scroll
+    // Navbar shadow
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 20) {
-            navbar.style.boxShadow = '0 4px 16px rgba(193,39,45,0.15)';
+            navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)';
         } else {
-            navbar.style.boxShadow = '0 4px 12px rgba(193,39,45,0.1)';
+            navbar.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
         }
     });
     
@@ -37,32 +36,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
     
-    document.querySelectorAll('.service-card-image, .tool-card, .stat-card').forEach((el, i) => {
+    document.querySelectorAll('.service-card, .tool-card, .stat-box').forEach((el, i) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(40px)';
-        el.style.transition = `all 0.6s ease ${i * 0.1}s`;
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `all 0.5s ease ${i * 0.08}s`;
         observer.observe(el);
     });
     
     // Stats counter
-    const statNumbers = document.querySelectorAll('.stat-number');
+    const statNumbers = document.querySelectorAll('.stat-num');
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.dataset.animated) {
                 entry.target.dataset.animated = 'true';
-                const target = entry.target.textContent;
+                const text = entry.target.textContent;
                 
-                if (target.includes('/')) return; // Skip 24/7
+                if (text.includes('/')) return;
                 
-                const isPercent = target.includes('%');
-                const hasK = target.includes('K');
-                const hasPlus = target.includes('+');
+                const hasPercent = text.includes('%');
+                const hasK = text.includes('K');
+                const hasPlus = text.includes('+');
                 
-                let value = parseFloat(target.replace(/[^\d.]/g, ''));
+                let value = parseFloat(text.replace(/[^\d.]/g, ''));
                 if (hasK) value *= 1000;
                 
                 let current = 0;
-                const duration = 2000;
+                const duration = 1800;
                 const steps = 60;
                 const increment = value / steps;
                 
@@ -76,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     let display;
                     if (hasK) {
                         display = (current / 1000).toFixed(1) + 'K' + (hasPlus ? '+' : '');
-                    } else if (isPercent) {
+                    } else if (hasPercent) {
                         display = current.toFixed(1) + '%';
                     } else {
                         display = Math.floor(current);
