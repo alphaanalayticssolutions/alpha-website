@@ -1,311 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alpha Applied Analytics Solutions - AI-Powered Legal & Financial Analytics">
-    <title>Alpha Applied Analytics Solutions | AI-Powered Legal Analytics</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpha Applied Analytics Solutions — AI-Powered Legal & Financial Analytics</title>
+<meta name="description" content="AI-powered forensic financial analysis for law firms and financial professionals. Forensic reports, hidden income detection, and bank statement extraction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="brand">
-                    <img src="./images/logo.png" alt="Alpha Analytics" class="logo">
-                    <span class="brand-text">ALPHA APPLIED ANALYTICS</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#tools" class="nav-link">Tools</a></li>
-                    <li><a href="#contact" class="nav-btn">Contact Us</a></li>
-                </ul>
-                <button class="mobile-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <img src="./images/logo.png" alt="Alpha Analytics" style="height: 36px; width: auto;">
+      <div class="nav-logo-text">Alpha <span class="accent">Applied</span><br>Analytics Solutions</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2h-3.28a3 3 0 01-2.4-1.2l-2.7-3.6a3 3 0 01 0-3.6l2.7-3.6a3 3 0 012.4-1.2H19a2 2 0 012 2v4m0 0l-5-5m5 5l-5 5"/></svg>
+        Contact Us
+      </a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+      Trusted by CDFA Practitioners &amp; Law Firms Nationwide
+    </div>
+    <h1>AI-Powered<br><em>Forensic Financial</em><br>Analysis for Complex Litigation</h1>
+    <p class="hero-desc">Court-ready forensic reports, hidden income detection, and intelligent bank statement extraction — delivered with forensic-grade accuracy</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Free Strategy Call
+      </a>
+      <a href="#platform" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        See Platform Demo
+      </a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <div class="hero-trust-num">99.9%</div>
+        <div class="hero-trust-label">Accuracy Rate</div>
+      </div>
+      <div class="hero-trust-item">
+        <div class="hero-trust-num">50K+</div>
+        <div class="hero-trust-label">Documents Processed</div>
+      </div>
+      <div class="hero-trust-item">
+        <div class="hero-trust-num">24/7</div>
+        <div class="hero-trust-label">AI Processing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services-section" id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Forensic Analysis Services</h2>
+      <p class="section-subtitle">Court-ready financial analysis and document processing for complex litigation</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-icon">⚖️</div>
+        <h3>Divorce & Family Law</h3>
+        <p>Comprehensive forensic financial analysis for high-net-worth divorce cases. Hidden income detection, lifestyle analysis, asset tracing, and court-ready reports for property division and spousal support disputes.</p>
+        <ul class="service-includes">
+          <li>Income & expense analysis</li>
+          <li>Hidden income detection</li>
+          <li>Lifestyle expenditure tracking</li>
+          <li>Asset tracing & valuation</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">📊</div>
+        <h3>Economic Damages</h3>
+        <p>Precise damage calculations and lost profits analysis for business interruption, breach of contract, and personal injury claims. Expert financial modeling backed by AI-powered data extraction.</p>
+        <ul class="service-includes">
+          <li>Lost profits calculation</li>
+          <li>Business interruption analysis</li>
+          <li>Damage quantification</li>
+          <li>Expert witness support</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🏦</div>
+        <h3>Bankruptcy & Insolvency</h3>
+        <p>Financial reconstruction, preference analysis, and fraudulent transfer detection for bankruptcy proceedings. Comprehensive review of debtor financials with detailed transaction tracing.</p>
+        <ul class="service-includes">
+          <li>Preferential transfer analysis</li>
+          <li>Fraudulent conveyance detection</li>
+          <li>Financial reconstruction</li>
+          <li>Creditor recovery support</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">💡</div>
+        <h3>Intellectual Property</h3>
+        <p>Royalty analysis, IP valuation, and damages assessment for patent infringement, trademark disputes, and trade secret misappropriation cases.</p>
+        <ul class="service-includes">
+          <li>IP valuation & assessment</li>
+          <li>Royalty analysis</li>
+          <li>Infringement damages</li>
+          <li>Reasonable royalty calculation</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🔍</div>
+        <h3>Forensic Accounting</h3>
+        <p>Full-spectrum forensic accounting services including fraud investigation, embezzlement detection, and financial misconduct analysis with litigation support.</p>
+        <ul class="service-includes">
+          <li>Fraud investigation</li>
+          <li>Embezzlement detection</li>
+          <li>Financial misconduct analysis</li>
+          <li>Litigation support & testimony</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">📄</div>
+        <h3>Document Analysis</h3>
+        <p>AI-powered extraction and analysis of financial records, bank statements, invoices, and contracts. Structured data output with automated categorization and gap analysis.</p>
+        <ul class="service-includes">
+          <li>Bank statement extraction</li>
+          <li>Invoice processing</li>
+          <li>Contract analysis</li>
+          <li>Document gap detection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLATFORM ===== -->
+<section class="platform-section" id="platform">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Our <em>AI-Powered</em> Platform</h2>
+      <p class="section-subtitle">Purpose-built tools for forensic financial analysis</p>
+    </div>
+    <div class="platform-grid">
+      <div class="platform-card featured">
+        <div class="platform-card-header">
+          <div class="platform-card-icon" style="background: linear-gradient(135deg, #B91C1C 0%, #DC2626 100%);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+            </svg>
+          </div>
+          <span class="platform-badge">Court-Ready</span>
         </div>
-    </nav>
-
-    <!-- Hero with Premium Image Background -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">AI-Powered Legal & Financial Analytics</h1>
-                <p class="hero-text">
-                    Expert forensic analysis and document processing powered by cutting-edge artificial intelligence. 
-                    Delivering court-ready insights for complex litigation matters.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-red">Schedule Consultation</a>
-                    <a href="#services" class="btn btn-outline">Our Services</a>
-                </div>
-            </div>
+        <h3>Divorce Analysis Engine</h3>
+        <p>Three-layer AI forensic analysis detecting hidden income, irregular spending patterns, and asset dissipation. Generates six-tab Excel reports with transaction heatmaps, matched interbank transfers, and anomaly scoring.</p>
+        <ul class="platform-features">
+          <li><strong>Deterministic Rule Engine:</strong> 11-category transaction classification</li>
+          <li><strong>AI Pattern Detection:</strong> Claude Haiku/Sonnet dual-mode analysis</li>
+          <li><strong>Anomaly Scoring:</strong> Litigation-ready risk assessment with explanations</li>
+          <li><strong>Output:</strong> 6-tab Excel (Heatmap, Insights, Transfers, Earnings, Spending, Anomalies)</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-header">
+          <div class="platform-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <span class="platform-badge">99.9% Accurate</span>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-inner">
-                <h2 class="section-title">Transforming Legal Analytics with AI</h2>
-                <p class="about-desc">
-                    Alpha Applied Analytics Solutions combines advanced artificial intelligence with deep forensic expertise 
-                    to deliver precision analysis and court-ready documentation for complex legal matters.
-                </p>
-                <div class="stats">
-                    <div class="stat-box red-border">
-                        <div class="stat-num red-text">99.9%</div>
-                        <div class="stat-label">Accuracy Rate</div>
-                    </div>
-                    <div class="stat-box blue-border">
-                        <div class="stat-num blue-text">50K+</div>
-                        <div class="stat-label">Documents Processed</div>
-                    </div>
-                    <div class="stat-box red-border">
-                        <div class="stat-num red-text">24/7</div>
-                        <div class="stat-label">AI Processing</div>
-                    </div>
-                </div>
-            </div>
+        <h3>Quality Control AI</h3>
+        <p>Two-layer validation system combining rule-based checks with AI review. Verifies opening/closing balances, total debits/credits, and per-category breakdowns for forensic-grade accuracy.</p>
+        <ul class="platform-features">
+          <li>9 validation rules including per-category debit breakdowns</li>
+          <li>AI-powered PDF summary validation</li>
+          <li>Numeric scoring (100 minus deductions per fail/warning)</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-header">
+          <div class="platform-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+            </svg>
+          </div>
+          <span class="platform-badge">Multi-Format</span>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-head">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-sub">Comprehensive legal analytics and financial forensics expertise</p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Blue Cards -->
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80');">
-                    <div class="service-overlay blue-overlay"></div>
-                    <div class="service-text">
-                        <div class="service-icon">⚖️</div>
-                        <h3>Divorce & Family Law</h3>
-                        <p>Expert analysis for property division, hidden income detection, and court-ready forensic reports.</p>
-                    </div>
-                </div>
-
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80');">
-                    <div class="service-overlay blue-overlay"></div>
-                    <div class="service-text">
-                        <div class="service-icon">💡</div>
-                        <h3>Intellectual Property</h3>
-                        <p>Comprehensive IP valuation, infringement analysis, and damage assessment for patents.</p>
-                    </div>
-                </div>
-
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80');">
-                    <div class="service-overlay blue-overlay"></div>
-                    <div class="service-text">
-                        <div class="service-icon">🔍</div>
-                        <h3>Legal Discovery</h3>
-                        <p>Streamlined document review, classification, and gap analysis for complete production.</p>
-                    </div>
-                </div>
-
-                <!-- Red Cards -->
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1554224311-beee415c201f?w=800&q=80');">
-                    <div class="service-overlay red-overlay"></div>
-                    <div class="service-text">
-                        <div class="service-icon">📊</div>
-                        <h3>Economic Damages</h3>
-                        <p>Precise damage calculations, lost profits analysis, and business valuation for litigation.</p>
-                    </div>
-                </div>
-
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&q=80');">
-                    <div class="service-overlay red-overlay"></div>
-                    <div class="service-text">
-                        <div class="service-icon">📄</div>
-                        <h3>Document Analysis</h3>
-                        <p>AI-powered extraction and analysis of financial records into structured formats.</p>
-                    </div>
-                </div>
-
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80');">
-                    <div class="service-overlay red-overlay"></div>
-                    <div class="service-text">
-                        <div class="service-icon">🎯</div>
-                        <h3>Litigation Support</h3>
-                        <p>Strategic consulting, expert testimony preparation, and financial investigation.</p>
-                    </div>
-                </div>
-            </div>
+        <h3>Bank Extraction</h3>
+        <p>Automated extraction from bank statements with 17-column structured output. Handles scanned and digital PDFs with balance reconciliation and statement period tracking.</p>
+        <ul class="platform-features">
+          <li>17-column Excel schema with accounting format</li>
+          <li>Running balance verification</li>
+          <li>Statement tracker with gap detection</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-header">
+          <div class="platform-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="11" x2="15" y2="11"/>
+            </svg>
+          </div>
+          <span class="platform-badge">Intelligent</span>
         </div>
-    </section>
-
-    <!-- Tools Section -->
-    <section id="tools" class="tools">
-        <div class="container">
-            <div class="section-head">
-                <h2 class="section-title">AI-Powered Tools</h2>
-                <p class="section-sub">Advanced technology for efficient legal analytics</p>
-            </div>
-
-            <div class="tools-grid">
-                <!-- Red Featured -->
-                <div class="tool-card red-card">
-                    <div class="tool-icon red-icon">
-                        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="8" r="4"/>
-                            <path d="M20 21a8 8 0 10-16 0"/>
-                            <line x1="12" y1="12" x2="12" y2="16"/>
-                            <line x1="10" y1="14" x2="14" y2="14"/>
-                        </svg>
-                    </div>
-                    <h3>Divorce Analysis Engine</h3>
-                    <p>AI-powered forensic analysis detecting hidden income and spending patterns with six-tab reports.</p>
-                    <span class="badge red-badge">Court-Ready</span>
-                </div>
-
-                <!-- Blue Cards -->
-                <div class="tool-card blue-card">
-                    <div class="tool-icon blue-icon">
-                        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                            <path d="M12 2a10 10 0 00-10 10"/>
-                        </svg>
-                    </div>
-                    <h3>Quality Control AI</h3>
-                    <p>Two-layer validation combining rule-based checks with AI review for forensic-grade accuracy.</p>
-                    <span class="badge blue-badge">99.9% Accurate</span>
-                </div>
-
-                <div class="tool-card blue-card">
-                    <div class="tool-icon blue-icon">
-                        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="7" width="20" height="14" rx="2"/>
-                            <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-                            <line x1="6" y1="11" x2="6" y2="11"/>
-                            <line x1="10" y1="11" x2="10" y2="11"/>
-                        </svg>
-                    </div>
-                    <h3>Bank Extraction</h3>
-                    <p>Automated transaction data extraction with multi-format support and balance reconciliation.</p>
-                    <span class="badge blue-badge">Multi-Format</span>
-                </div>
-
-                <div class="tool-card red-card">
-                    <div class="tool-icon red-icon">
-                        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="9" y1="15" x2="15" y2="15"/>
-                            <line x1="9" y1="11" x2="15" y2="11"/>
-                        </svg>
-                    </div>
-                    <h3>PDF Processing</h3>
-                    <p>Intelligent document enhancement, classification, splitting, and Bates stamping.</p>
-                    <span class="badge red-badge">Intelligent</span>
-                </div>
-
-                <div class="tool-card blue-card">
-                    <div class="tool-icon blue-icon">
-                        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="7" height="7" rx="1"/>
-                            <rect x="14" y="3" width="7" height="7" rx="1"/>
-                            <rect x="14" y="14" width="7" height="7" rx="1"/>
-                            <rect x="3" y="14" width="7" height="7" rx="1"/>
-                        </svg>
-                    </div>
-                    <h3>Coverage Tracker</h3>
-                    <p>Visualizes document coverage across time periods and identifies gaps in production.</p>
-                    <span class="badge blue-badge">Gap Analysis</span>
-                </div>
-            </div>
+        <h3>PDF Processing</h3>
+        <p>Document enhancement, duplicate detection, AI classification, and Bates stamping. Removes highlight suppression from scanned documents with 5-color cataloging.</p>
+        <ul class="platform-features">
+          <li>Duplicate detection across folder uploads</li>
+          <li>AI-powered document classification</li>
+          <li>Highlight suppression for scanned statements</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-card-header">
+          <div class="platform-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
+            </svg>
+          </div>
+          <span class="platform-badge">Gap Analysis</span>
         </div>
-    </section>
+        <h3>Coverage Tracker</h3>
+        <p>Visualizes document coverage across time periods with X-mark calendar grids. Identifies gaps in bank statement production by account and month.</p>
+        <ul class="platform-features">
+          <li>Per-account coverage tracking</li>
+          <li>Visual gap identification</li>
+          <li>Handles both bank and credit card statements</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-bg"></div>
-        <div class="container">
-            <div class="contact-inner">
-                <h2 class="section-title white">Ready to Get Started?</h2>
-                <p class="contact-desc">Contact us to discuss how our AI-powered solutions can support your legal matters</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="contact-label">Email</div>
-                            <a href="mailto:info@alphaanalyticssol.com" class="contact-link">info@alphaanalyticssol.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="contact-label">LinkedIn</div>
-                            <a href="https://www.linkedin.com/company/alpha-applied-analytics-solutions/" target="_blank" rel="noopener noreferrer" class="contact-link">Connect with us</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-cta">
-                    <a href="mailto:info@alphaanalyticssol.com" class="btn btn-red-large">Schedule Consultation</a>
-                </div>
+<!-- ===== ABOUT ===== -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Built by <em>Forensic Analysts</em>,<br>Powered by AI</h2>
+        <p>Alpha Applied Analytics Solutions was founded to address a critical gap in the legal analytics market: the need for forensic-grade financial analysis that scales without sacrificing accuracy.</p>
+        <p>Our platform combines deterministic rule engines with state-of-the-art AI models (Claude Sonnet 4.5, Haiku 4.5) to deliver analysis that meets courtroom standards. Every tool is built in-house, tested on real cases, and refined based on feedback from CDFAs and litigation teams nationwide.</p>
+        <div class="about-principles">
+          <div class="about-principle">
+            <div class="about-principle-num">01</div>
+            <div>
+              <h4>Forensic-Grade Accuracy</h4>
+              <p>99.9% extraction accuracy with two-layer QC validation</p>
             </div>
+          </div>
+          <div class="about-principle">
+            <div class="about-principle-num">02</div>
+            <div>
+              <h4>Court-Ready Output</h4>
+              <p>Structured reports designed for attorney review and expert testimony</p>
+            </div>
+          </div>
+          <div class="about-principle">
+            <div class="about-principle-num">03</div>
+            <div>
+              <h4>Strategic Partnership</h4>
+              <p>Dedicated point of contact, personal QC, incremental updates, deadline management</p>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-name">ALPHA APPLIED ANALYTICS SOLUTIONS</div>
-                    <p class="footer-tag">AI-Powered Legal & Financial Analytics</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#services">Divorce & Family Law</a></li>
-                            <li><a href="#services">Economic Damages</a></li>
-                            <li><a href="#services">Intellectual Property</a></li>
-                            <li><a href="#services">Document Analysis</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#tools">Tools</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Alpha Applied Analytics Solutions. All rights reserved.</p>
-            </div>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="about-stat-num">50K+</div>
+          <div class="about-stat-label">Documents Processed</div>
         </div>
-    </footer>
+        <div class="about-stat">
+          <div class="about-stat-num">99.9%</div>
+          <div class="about-stat-label">Accuracy Rate</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">24/7</div>
+          <div class="about-stat-label">AI Processing</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">6-Tab</div>
+          <div class="about-stat-label">Excel Reports</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="js/main.js"></script>
+<!-- ===== AUDIENCE ===== -->
+<section class="audience-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Who We <em>Serve</em></h2>
+      <p class="section-subtitle">Trusted by financial professionals and litigation teams nationwide</p>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-card-icon">💼</div>
+        <h3>Certified Divorce Financial Analysts</h3>
+        <p>Streamline forensic analysis for high-net-worth divorce cases. Our platform detects hidden income and irregular spending patterns, delivering court-ready 6-tab Excel reports with transaction heatmaps and anomaly scoring.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-icon">👨‍💼</div>
+        <h3>Family Law Attorneys</h3>
+        <p>Strategic forensic analysis partnership for complex property division and spousal support disputes. We provide expert financial investigation with dedicated point-of-contact and court deadline management.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-icon">🏛</div>
+        <h3>Litigation & Advisory Teams</h3>
+        <p>Scalable document processing, bank statement extraction, and forensic analysis for firms handling complex multi-entity financial disputes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <h2>Let's Review Your <em>Next Case</em> Together</h2>
+    <p class="cta-sub">Book a 15-minute call. We'll walk through how our forensic AI engine can support your practice — no commitment, no pitch deck.</p>
+    <div class="cta-buttons">
+      <a href="mailto:info@alphaanalyticssol.com" class="btn-primary" style="font-size:16px;padding:18px 40px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Free Strategy Call
+      </a>
+      <a href="mailto:info@alphaanalyticssol.com?subject=Sample%20Report%20Request" class="btn-secondary" style="font-size:16px;padding:18px 40px;">
+        Request Sample Report
+      </a>
+    </div>
+    <div class="cta-contact-row">
+      <div class="cta-contact-item">
+        <div class="cta-contact-icon">✉</div>
+        <a href="mailto:info@alphaanalyticssol.com">info@alphaanalyticssol.com</a>
+      </div>
+      <div class="cta-contact-item">
+        <div class="cta-contact-icon">in</div>
+        <a href="https://www.linkedin.com/company/alpha-applied-analytics-solutions" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="nav-logo" style="margin-bottom:12px;">
+          <img src="./images/logo.png" alt="Alpha Analytics" style="height: 36px; width: auto;">
+          <div class="nav-logo-text">Alpha <span class="accent">Applied</span><br>Analytics Solutions</div>
+        </a>
+        <p>AI-powered forensic financial analysis for attorneys, CDFAs, and litigation teams worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Divorce & Family Law</a>
+        <a href="#services">Economic Damages</a>
+        <a href="#services">Bankruptcy</a>
+        <a href="#services">Intellectual Property</a>
+        <a href="#services">Litigation Support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="#platform">Forensic Analysis Engine</a>
+        <a href="#platform">Bank Extraction</a>
+        <a href="#platform">Quality Control AI</a>
+        <a href="#platform">PDF Processing</a>
+        <a href="#platform">Coverage Tracker</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:info@alphaanalyticssol.com">Email Us</a>
+        <a href="https://www.linkedin.com/company/alpha-applied-analytics-solutions" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Alpha Applied Analytics Solutions. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
