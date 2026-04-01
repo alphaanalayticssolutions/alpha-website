@@ -148,7 +148,7 @@ h1, h2, h3, h4 {
 .hero {
   padding: 180px 32px 120px;
   background: 
-    linear-gradient(135deg, rgba(11,29,51,0.92) 0%, rgba(15,36,64,0.88) 100%),
+    linear-gradient(135deg, rgba(11,29,51,0.85) 0%, rgba(11,29,51,0.90) 100%),
     url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=95') center/cover;
   position: relative;
   overflow: hidden;
@@ -1188,7 +1188,16 @@ h1, h2, h3, h4 {
           <span class="tool-feature">17-Column Schema</span>
         </div>
       </div>
-      <div class="tool-visual"></div>
+      <div class="tool-visual">
+        <div style="font-size:11px;color:var(--gold);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Sample Extraction Output</div>
+        <div style="display:grid;grid-template-columns:80px 1fr 70px 70px;gap:6px;font-size:11px;">
+          <div style="color:var(--slate-light);font-weight:600;">Date</div><div style="color:var(--slate-light);font-weight:600;">Description</div><div style="color:var(--slate-light);font-weight:600;">Debit</div><div style="color:var(--slate-light);font-weight:600;">Credit</div>
+          <div style="color:rgba(255,255,255,0.5);">01-15-24</div><div style="color:rgba(255,255,255,0.7);">DIRECT DEPOSIT - EMPLOYER</div><div style="color:var(--slate-light);">—</div><div style="color:#86EFAC;">$5,200</div>
+          <div style="color:rgba(255,255,255,0.5);">01-16-24</div><div style="color:rgba(255,255,255,0.7);">WIRE TRANSFER OUT</div><div style="color:#FCA5A5;">$3,400</div><div style="color:var(--slate-light);">—</div>
+          <div style="color:rgba(255,255,255,0.5);">01-18-24</div><div style="color:rgba(255,255,255,0.7);">CHECK #2847</div><div style="color:#FCA5A5;">$1,250</div><div style="color:var(--slate-light);">—</div>
+        </div>
+        <div style="margin-top:14px;padding:8px 12px;background:rgba(22,163,74,0.1);border-radius:6px;font-size:11px;color:#86EFAC;">✓ Closing balance reconciled: $12,847.33</div>
+      </div>
     </div>
     <!-- Tool 3: Quality Control -->
     <div class="tool-row">
@@ -1203,7 +1212,17 @@ h1, h2, h3, h4 {
           <span class="tool-feature">Numeric Scoring</span>
         </div>
       </div>
-      <div class="tool-visual"></div>
+      <div class="tool-visual">
+        <div style="font-size:11px;color:var(--gold);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">QC Validation Results</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(22,163,74,0.08);border-radius:6px;"><span style="color:#86EFAC;font-size:12px;">✓ Opening Balance Match</span><span style="color:#86EFAC;font-size:11px;font-weight:700;">PASS</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(22,163,74,0.08);border-radius:6px;"><span style="color:#86EFAC;font-size:12px;">✓ Total Credits Verified</span><span style="color:#86EFAC;font-size:11px;font-weight:700;">PASS</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(22,163,74,0.08);border-radius:6px;"><span style="color:#86EFAC;font-size:12px;">✓ Total Debits Verified</span><span style="color:#86EFAC;font-size:11px;font-weight:700;">PASS</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(22,163,74,0.08);border-radius:6px;"><span style="color:#86EFAC;font-size:12px;">✓ Closing Balance Match</span><span style="color:#86EFAC;font-size:11px;font-weight:700;">PASS</span></div>
+        </div>
+        <div style="margin-top:14px;text-align:center;font-family:'DM Serif Display',serif;font-size:36px;color:#86EFAC;">100%</div>
+        <div style="text-align:center;font-size:11px;color:var(--slate-light);">QC Score — Forensic Grade</div>
+      </div>
     </div>
     <!-- Tool 4: PDF Processing + Coverage -->
     <div class="tool-row reverse">
@@ -1218,7 +1237,24 @@ h1, h2, h3, h4 {
           <span class="tool-feature">Highlight Suppression</span>
         </div>
       </div>
-      <div class="tool-visual"></div>
+      <div class="tool-visual">
+        <div style="font-size:11px;color:var(--gold);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Statement Coverage — Chase ••2281</div>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:4px;">
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Jan</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Feb</div>
+          <div style="padding:8px 4px;background:rgba(185,28,28,0.2);border-radius:4px;text-align:center;font-size:10px;color:#FCA5A5;">Mar</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Apr</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">May</div>
+          <div style="padding:8px 4px;background:rgba(185,28,28,0.2);border-radius:4px;text-align:center;font-size:10px;color:#FCA5A5;">Jun</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Jul</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Aug</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Sep</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Oct</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Nov</div>
+          <div style="padding:8px 4px;background:rgba(22,163,74,0.2);border-radius:4px;text-align:center;font-size:10px;color:#86EFAC;">Dec</div>
+        </div>
+        <div style="margin-top:12px;padding:8px 12px;background:rgba(185,28,28,0.1);border-radius:6px;font-size:11px;color:#FCA5A5;">⚠ 2 gaps detected: Mar 2024, Jun 2024 — request from opposing counsel</div>
+      </div>
     </div>
   </div>
 </section>
