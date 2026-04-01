@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intellectual Property — Alpha Applied Analytics Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1D33;
+  --crimson: #B91C1C;
+  --crimson-hover: #991B1B;
+  --gold: #C5A572;
+  --slate: #64748B;
+  --slate-light: #94A3B8;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --bg-subtle: #F1F5F9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+  line-height: 1.2;
+}
+
+.navbar {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 24px rgba(11,29,51,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.nav-logo img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+.nav-logo-text {
+  font-weight: 700;
+  font-size: 14.5px;
+  letter-spacing: 0.8px;
+  color: var(--navy);
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+.nav-logo-text .accent { color: var(--crimson); }
+
+.back-link {
+  font-size: 14px;
+  color: var(--slate);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--crimson); }
+
+.service-hero {
+  padding: 120px 32px 80px;
+  background: linear-gradient(135deg, rgba(185,28,28,0.88) 0%, rgba(91,14,14,0.92) 100%),
+              url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=90') center/cover;
+  color: white;
+  text-align: center;
+}
+.service-hero h1 {
+  font-size: clamp(38px, 5vw, 54px);
+  margin-bottom: 20px;
+  color: white;
+}
+.service-hero p {
+  font-size: 19px;
+  color: rgba(255,255,255,0.9);
+  max-width: 720px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.service-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background: rgba(197,165,114,0.2);
+  border: 1px solid rgba(197,165,114,0.3);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 24px;
+}
+
+.image-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  min-height: 500px;
+}
+.image-section.reverse { direction: rtl; }
+.image-section.reverse > * { direction: ltr; }
+
+.image-visual {
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  position: relative;
+}
+.image-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11,29,51,0.3) 0%, rgba(11,29,51,0.1) 100%);
+}
+
+.image-content {
+  padding: 64px 80px;
+  background: white;
+}
+.image-content h2 {
+  font-size: 36px;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+.image-content p {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.features-section {
+  padding: 80px 32px;
+  background: var(--bg-subtle);
+}
+.features-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.features-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.features-header h2 {
+  font-size: 40px;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(11,29,51,0.06);
+  transition: transform 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+}
+.feature-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+.feature-content {
+  padding: 28px 24px;
+}
+.feature-content h3 {
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.feature-content p {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.7;
+}
+
+.cta-section {
+  padding: 80px 32px;
+  background: var(--navy);
+  text-align: center;
+  color: white;
+}
+.cta-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.cta-section h2 {
+  font-size: 38px;
+  color: white;
+  margin-bottom: 20px;
+}
+.cta-section p {
+  font-size: 17px;
+  color: var(--slate-light);
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--crimson);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  background: var(--crimson-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .image-section {
+    grid-template-columns: 1fr;
+  }
+  .image-section.reverse {
+    direction: ltr;
+  }
+  .image-visual {
+    min-height: 350px;
+  }
+  .image-content {
+    padding: 48px 40px;
+  }
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .service-hero {
+    padding: 100px 24px 60px;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/logo.png" alt="Alpha Applied Analytics Solutions">
+      <div class="nav-logo-text">Alpha <span class="accent">Applied</span><br>Analytics Solutions</div>
+    </a>
+    <a href="index.html#services" class="back-link">← Back to Services</a>
+  </div>
+</nav>
+
+<section class="service-hero">
+  <span class="service-badge">IP Valuation & Damages</span>
+  <h1>Intellectual Property Analytics</h1>
+  <p>Valuing innovation with precision and insight. We assist in quantifying damages and valuation related to intellectual property disputes with financial expertise and industry analysis.</p>
+</section>
+
+<section class="image-section">
+  <div class="image-visual" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=90');"></div>
+  <div class="image-content">
+    <h2>IP Valuation &<br>Royalty Analysis</h2>
+    <p>We assess the financial value of intellectual property assets.</p>
+    <p>Our team evaluates appropriate royalty rates and licensing structures to support litigation and negotiation processes.</p>
+  </div>
+</section>
+
+<section class="image-section reverse">
+  <div class="image-visual" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=90');"></div>
+  <div class="image-content">
+    <h2>Infringement Damage<br>Assessment</h2>
+    <p>We quantify losses resulting from unauthorized use of IP.</p>
+    <p>Our analysis combines financial expertise with industry understanding to help clients understand the true economic impact of IP-related issues.</p>
+  </div>
+</section>
+
+<section class="image-section">
+  <div class="image-visual" style="background-image: url('https://images.unsplash.com/photo-1554224311-beee2c91e632?w=1200&q=90');"></div>
+  <div class="image-content">
+    <h2>Market Impact<br>Analysis</h2>
+    <p>We analyze how infringement affects market position and revenue.</p>
+    <p>Our comprehensive approach ensures accurate valuation and damage assessment for all IP-related disputes.</p>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="features-inner">
+    <div class="features-header">
+      <h2>What We Deliver</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=85');"></div>
+        <div class="feature-content">
+          <h3>IP Valuation</h3>
+          <p>Assess the financial value of intellectual property assets.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=85');"></div>
+        <div class="feature-content">
+          <h3>Royalty Analysis</h3>
+          <p>Evaluate appropriate royalty rates and licensing structures.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=85');"></div>
+        <div class="feature-content">
+          <h3>Infringement Damage Assessment</h3>
+          <p>Quantify losses from unauthorized use of intellectual property.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=85');"></div>
+        <div class="feature-content">
+          <h3>Market Impact Analysis</h3>
+          <p>Analyze how infringement affects market position and revenue.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=600&q=85');"></div>
+        <div class="feature-content">
+          <h3>Financial Expertise</h3>
+          <p>Combine financial analysis with industry understanding.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-image" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=85');"></div>
+        <div class="feature-content">
+          <h3>Strategic Support</h3>
+          <p>Support litigation and negotiation processes with expert analysis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>IP Damages Case?</h2>
+    <p>Schedule a consultation to discuss your patent, trademark, or trade secret matter and how we can support your damages or valuation analysis.</p>
+    <a href="mailto:info@alphaanalyticssol.com?subject=Intellectual%20Property%20Inquiry" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      Book a Free Call
+    </a>
+  </div>
+</section>
+
+</body>
+</html>

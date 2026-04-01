@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Alpha Applied Analytics Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1D33;
+  --navy-deep: #091729;
+  --crimson: #B91C1C;
+  --crimson-hover: #991B1B;
+  --gold: #C5A572;
+  --slate: #64748B;
+  --slate-light: #94A3B8;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --bg-subtle: #F1F5F9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--navy);
+  line-height: 1.6;
+  background: var(--bg-subtle);
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+  line-height: 1.2;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 24px rgba(11,29,51,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.nav-logo img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+.nav-logo-text {
+  font-weight: 700;
+  font-size: 14.5px;
+  letter-spacing: 0.8px;
+  color: var(--navy);
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+.nav-logo-text .accent { color: var(--crimson); }
+
+/* ===== CONTENT ===== */
+.policy-container {
+  max-width: 880px;
+  margin: 60px auto 80px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 40px rgba(11,29,51,0.06);
+  padding: 64px;
+}
+
+.policy-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--border);
+}
+.policy-header h1 {
+  font-size: 42px;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.policy-date {
+  font-size: 14px;
+  color: var(--slate);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.policy-content h2 {
+  font-size: 26px;
+  color: var(--navy);
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.policy-content h3 {
+  font-size: 20px;
+  color: var(--navy);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+.policy-content p {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.policy-content ul {
+  margin: 20px 0 20px 32px;
+}
+.policy-content li {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.policy-content strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+.policy-content a {
+  color: var(--crimson);
+  text-decoration: none;
+  font-weight: 500;
+}
+.policy-content a:hover {
+  text-decoration: underline;
+}
+
+.policy-footer {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.policy-footer p {
+  font-size: 14px;
+  color: var(--slate);
+  font-style: italic;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--crimson);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  margin-bottom: 24px;
+}
+.back-button:hover {
+  background: var(--crimson-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .policy-container {
+    margin: 32px 20px 60px;
+    padding: 40px 28px;
+  }
+  .policy-header h1 {
+    font-size: 32px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/logo.png" alt="Alpha Applied Analytics Solutions">
+      <div class="nav-logo-text">Alpha <span class="accent">Applied</span><br>Analytics Solutions</div>
+    </a>
+  </div>
+</nav>
+
+<!-- ===== POLICY CONTENT ===== -->
+<div class="policy-container">
+  <a href="index.html" class="back-button">← Back to Home</a>
+  
+  <div class="policy-header">
+    <h1>Terms of Service</h1>
+    <p class="policy-date">Last Updated: April 1, 2026</p>
+  </div>
+
+  <div class="policy-content">
+    <p>Welcome to Alpha Applied Analytics Solutions. These Terms of Service ("Terms") govern your use of our website and services. By accessing our website or engaging our services, you agree to be bound by these Terms. Please read them carefully.</p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using our website (alphaanalyticssol.com) or engaging our forensic financial analysis and litigation support services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you must not use our website or services.</p>
+
+    <h2>2. Description of Services</h2>
+    <p>Alpha Applied Analytics Solutions provides AI-powered forensic financial analysis, litigation support, document processing, and related professional services to attorneys, law firms, financial professionals, and other qualified clients. Our services include but are not limited to:</p>
+    <ul>
+      <li>Forensic financial analysis and anomaly detection</li>
+      <li>Bank statement extraction and transaction analysis</li>
+      <li>Document processing, classification, and Bates stamping</li>
+      <li>Hidden asset identification and income tracing</li>
+      <li>Litigation support and expert consultation</li>
+      <li>Quality control and validation of financial data</li>
+    </ul>
+
+    <h2>3. Client Relationship and Engagement</h2>
+    <p>Our services are provided on a project-by-project basis or under ongoing service agreements as mutually agreed upon with our clients. Each engagement is subject to:</p>
+    <ul>
+      <li>Execution of a formal engagement letter or service agreement</li>
+      <li>Non-disclosure agreements (NDAs) to protect confidential client information</li>
+      <li>Scope of work documentation detailing deliverables, timelines, and pricing</li>
+      <li>Payment terms as specified in the engagement agreement</li>
+    </ul>
+
+    <p>We reserve the right to decline any engagement or terminate services at our discretion, with appropriate notice to the client.</p>
+
+    <h2>4. Professional Standards and Limitations</h2>
+    <h3>4.1 Not Legal or Financial Advice</h3>
+    <p>While we provide forensic analysis and litigation support services, we are not attorneys, certified public accountants, or licensed financial advisors. Our services do not constitute legal advice, accounting services, or investment advice. Clients should consult with appropriate licensed professionals for legal, tax, or financial planning guidance.</p>
+
+    <h3>4.2 Expert Testimony</h3>
+    <p>If expert testimony or court appearances are required as part of an engagement, such services will be separately negotiated and documented in a supplemental agreement with appropriate compensation terms.</p>
+
+    <h3>4.3 Quality and Accuracy</h3>
+    <p>We strive to provide accurate, thorough, and high-quality analysis. However, the accuracy of our deliverables depends in part on the completeness and accuracy of the information provided to us. We are not responsible for errors or omissions resulting from incomplete, inaccurate, or withheld source documents.</p>
+
+    <h2>5. Confidentiality and Data Protection</h2>
+    <p>We understand that our clients entrust us with highly sensitive financial and legal information. We are committed to maintaining the confidentiality of all client data in accordance with:</p>
+    <ul>
+      <li>Attorney-client privilege and work product protections where applicable</li>
+      <li>Non-disclosure agreements executed with each client</li>
+      <li>Industry-standard data security protocols and encryption</li>
+      <li>Our Privacy Policy (available at alphaanalyticssol.com/privacy-policy)</li>
+    </ul>
+
+    <p>Clients retain all ownership rights to their data and documents. We will not use client data for any purpose other than providing the agreed-upon services without explicit client authorization.</p>
+
+    <h2>6. Payment Terms</h2>
+    <h3>6.1 Fees and Invoicing</h3>
+    <p>Service fees are determined based on the scope and complexity of each engagement and will be specified in the engagement agreement. Payment terms typically include:</p>
+    <ul>
+      <li>Project-based fixed fees or hourly billing arrangements</li>
+      <li>Invoicing upon completion of milestones or deliverables</li>
+      <li>Payment due within 30 days of invoice date unless otherwise agreed</li>
+      <li>Late payment fees may apply for invoices not paid within terms</li>
+    </ul>
+
+    <h3>6.2 Refund Policy</h3>
+    <p>Due to the professional nature of our services and the time invested in each engagement, refunds are not typically provided for completed work. If a client is dissatisfied with deliverables, we will work in good faith to address concerns and revise work product as appropriate.</p>
+
+    <h2>7. Intellectual Property</h2>
+    <h3>7.1 Client Data</h3>
+    <p>All client documents, data, and information remain the property of the client. We claim no ownership rights to client materials.</p>
+
+    <h3>7.2 Work Product</h3>
+    <p>Upon full payment, clients receive ownership of the final deliverables (reports, spreadsheets, summaries, etc.) prepared specifically for their engagement. We retain the right to use de-identified methodologies, processes, and general analytical techniques developed in the course of providing our services.</p>
+
+    <h3>7.3 Website and Platform</h3>
+    <p>All content on our website, including text, graphics, logos, and software, is the property of Alpha Applied Analytics Solutions or its licensors and is protected by copyright and trademark laws.</p>
+
+    <h2>8. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, Alpha Applied Analytics Solutions shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to the use of our services, even if advised of the possibility of such damages.</p>
+
+    <p>Our total liability for any claims arising from our services shall not exceed the total fees paid by the client for the specific engagement giving rise to the claim.</p>
+
+    <h2>9. Indemnification</h2>
+    <p>Clients agree to indemnify and hold harmless Alpha Applied Analytics Solutions, its employees, and contractors from any claims, damages, or expenses arising from:</p>
+    <ul>
+      <li>Inaccurate or incomplete information provided by the client</li>
+      <li>Unauthorized use or disclosure of our work product by the client</li>
+      <li>Client's violation of these Terms or applicable laws</li>
+      <li>Client's use of our deliverables in a manner not authorized by the engagement agreement</li>
+    </ul>
+
+    <h2>10. Website Use and Restrictions</h2>
+    <p>You may use our website for lawful purposes only. You agree not to:</p>
+    <ul>
+      <li>Use the website in any way that violates applicable laws or regulations</li>
+      <li>Attempt to gain unauthorized access to our systems or networks</li>
+      <li>Upload malicious code, viruses, or harmful content</li>
+      <li>Scrape, harvest, or collect information from the website using automated means</li>
+      <li>Impersonate any person or entity or misrepresent your affiliation</li>
+    </ul>
+
+    <h2>11. Third-Party Links and Services</h2>
+    <p>Our website may contain links to third-party websites or services. We are not responsible for the content, privacy practices, or terms of service of any third-party sites. Your use of third-party services is at your own risk.</p>
+
+    <h2>12. Termination</h2>
+    <p>Either party may terminate an engagement in accordance with the terms specified in the engagement agreement. Upon termination:</p>
+    <ul>
+      <li>Client shall pay for all services rendered up to the termination date</li>
+      <li>We will return or destroy client data as directed by the client</li>
+      <li>Confidentiality obligations continue beyond termination</li>
+      <li>We may retain copies of work product as required by professional standards or law</li>
+    </ul>
+
+    <h2>13. Modifications to Terms</h2>
+    <p>We reserve the right to modify these Terms at any time. Changes will be posted on our website with an updated "Last Updated" date. Continued use of our website or services after changes are posted constitutes acceptance of the modified Terms. Material changes to existing client engagements will be communicated directly to affected clients.</p>
+
+    <h2>14. Governing Law and Dispute Resolution</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Illinois, United States, without regard to its conflict of law provisions. Any disputes arising from these Terms or our services shall be resolved through:</p>
+    <ul>
+      <li>Good faith negotiation between the parties</li>
+      <li>Mediation if negotiation is unsuccessful</li>
+      <li>Binding arbitration or litigation in Illinois courts if mediation fails</li>
+    </ul>
+
+    <h2>15. Severability</h2>
+    <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+    <h2>16. Entire Agreement</h2>
+    <p>These Terms, together with any engagement agreement and our Privacy Policy, constitute the entire agreement between you and Alpha Applied Analytics Solutions regarding the use of our website and services, superseding any prior agreements or understandings.</p>
+
+    <h2>17. Contact Information</h2>
+    <p>If you have questions about these Terms or our services, please contact us at:</p>
+
+    <p style="margin-top: 24px;">
+      <strong>Alpha Applied Analytics Solutions</strong><br>
+      Email: <a href="mailto:info@alphaanalyticssol.com">info@alphaanalyticssol.com</a><br>
+      Phone: <a href="tel:+12242179863">+1 (224) 217-9863</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/company/alpha-applied-analytics-solutions" target="_blank">Alpha Applied Analytics Solutions</a>
+    </p>
+
+    <div class="policy-footer">
+      <p>By using our website or services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
