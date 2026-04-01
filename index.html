@@ -10,20 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --primary-blue: #1E40AF;
-  --primary-red: #DC2626;
-  --blue-light: #3B82F6;
-  --red-light: #EF4444;
+  --navy: #0B1D33;
+  --navy-deep: #091729;
+  --navy-light: #122A4A;
+  --navy-mid: #0F2440;
+  --crimson: #B91C1C;
+  --crimson-hover: #991B1B;
   --gold: #C5A572;
-  --text-primary: #1F2937;
-  --text-secondary: #6B7280;
-  --bg-white: #FFFFFF;
-  --bg-light: #F9FAFB;
-  --bg-cream: #FEFDFB;
-  --border-light: #E5E7EB;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
-  --shadow-lg: 0 10px 40px rgba(0,0,0,0.08);
+  --gold-light: #D4B88C;
+  --slate: #64748B;
+  --slate-light: #94A3B8;
+  --off-white: #F8F9FA;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --bg-subtle: #F1F5F9;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,16 +31,15 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  color: var(--text-primary);
-  line-height: 1.7;
-  background: var(--bg-white);
+  color: var(--navy);
+  line-height: 1.6;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
   font-family: 'DM Serif Display', serif;
   line-height: 1.2;
-  color: var(--text-primary);
 }
 
 /* ===== NAVBAR ===== */
@@ -50,21 +49,18 @@ h1, h2, h3, h4 {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-light);
-  transition: all 0.3s;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
 }
-.navbar.scrolled { 
-  box-shadow: var(--shadow-sm);
-  background: rgba(255,255,255,0.95);
-}
+.navbar.scrolled { box-shadow: 0 2px 24px rgba(11,29,51,0.08); }
 
 .nav-inner {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 48px;
-  height: 80px;
+  padding: 0 32px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,59 +69,58 @@ h1, h2, h3, h4 {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   text-decoration: none;
 }
 .nav-logo img {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
 }
 .nav-logo-text {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  color: var(--text-primary);
+  font-size: 14.5px;
+  letter-spacing: 0.8px;
+  color: var(--navy);
   text-transform: uppercase;
-  line-height: 1.4;
+  line-height: 1.3;
 }
-.nav-logo-text .accent { color: var(--primary-red); }
+.nav-logo-text .accent { color: var(--crimson); }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 36px;
   list-style: none;
 }
 .nav-links a {
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--slate);
   transition: color 0.2s;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.2px;
 }
-.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover { color: var(--navy); }
 
 .nav-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 28px;
-  background: var(--primary-red);
+  padding: 10px 24px;
+  background: var(--crimson);
   color: white !important;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: 600 !important;
-  font-size: 14px !important;
-  letter-spacing: 0;
-  transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(220,38,38,0.2);
+  font-size: 13px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: background 0.2s, transform 0.2s;
 }
 .nav-cta:hover {
-  background: var(--red-light);
+  background: var(--crimson-hover) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(220,38,38,0.25);
 }
 
 .mobile-toggle {
@@ -137,81 +132,84 @@ h1, h2, h3, h4 {
   height: 32px;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
 }
 .mobile-toggle span {
-  width: 24px;
+  display: block;
+  width: 22px;
   height: 2px;
-  background: var(--text-primary);
+  background: var(--navy);
   border-radius: 2px;
   transition: 0.3s;
 }
 
-/* ===== HERO SECTION (PREMIUM WITH VISIBLE IMAGE) ===== */
+/* ===== HERO ===== */
 .hero {
-  padding: 180px 48px 120px;
+  padding: 160px 32px 100px;
+  background: 
+    linear-gradient(135deg, rgba(11,29,51,0.95) 0%, rgba(15,36,64,0.92) 100%),
+    url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=85') center/cover;
   position: relative;
   overflow: hidden;
-  min-height: 720px;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, rgba(30,64,175,0.92) 0%, rgba(17,24,39,0.88) 100%),
-              url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=85') center/cover;
-  background-attachment: fixed;
 }
-
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(197,165,114,0.12) 0%, transparent 60%);
-  z-index: 1;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(197,165,114,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(185,28,28,0.06) 0%, transparent 50%);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%; height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23C5A572' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
 }
 
 .hero-inner {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
-  width: 100%;
-}
-
-.hero-content {
-  max-width: 720px;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 20px;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.2);
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(197,165,114,0.12);
+  border: 1px solid rgba(197,165,114,0.25);
   border-radius: 100px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  color: white;
+  color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  margin-bottom: 32px;
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+  animation: fadeInUp 0.6s ease both;
 }
 .hero-badge::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 6px; height: 6px;
   background: var(--gold);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
 
 .hero h1 {
-  font-size: clamp(48px, 6vw, 72px);
+  font-size: clamp(40px, 5vw, 58px);
   color: white;
-  margin-bottom: 32px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  text-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease 0.1s both;
 }
 .hero h1 em {
   font-style: italic;
@@ -219,372 +217,351 @@ h1, h2, h3, h4 {
 }
 
 .hero-sub {
-  font-size: 20px;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.75;
-  margin-bottom: 48px;
-  max-width: 600px;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  font-weight: 400;
+  font-size: 18px;
+  color: var(--slate-light);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 520px;
+  animation: fadeInUp 0.6s ease 0.2s both;
 }
 
 .hero-ctas {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease 0.3s both;
 }
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 18px 36px;
-  background: white;
-  color: var(--primary-blue);
+  padding: 16px 32px;
+  background: var(--crimson);
+  color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 .btn-primary:hover {
+  background: var(--crimson-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(185,28,28,0.3);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 18px 36px;
+  padding: 16px 32px;
   background: transparent;
   color: white;
-  border: 2px solid rgba(255,255,255,0.35);
-  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
-  backdrop-filter: blur(8px);
 }
 .btn-secondary:hover {
-  border-color: white;
-  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.05);
 }
 
-/* ===== PLATFORM PREVIEW (TABLE MOVED HERE) ===== */
-.platform-preview {
-  padding: 100px 48px;
-  background: var(--bg-white);
+/* Hero Visual Card */
+.hero-visual {
+  position: relative;
+  animation: fadeInUp 0.8s ease 0.4s both;
 }
-
-.preview-inner {
-  max-width: 1280px;
-  margin: 0 auto;
+.hero-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(197,165,114,0.15);
+  border-radius: 12px;
+  padding: 32px;
 }
-
-.section-header {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 80px;
-}
-.section-label {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--primary-red);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 16px;
-}
-.section-header h2 {
-  font-size: clamp(36px, 4.5vw, 52px);
-  color: var(--text-primary);
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
-}
-.section-header p {
-  font-size: 18px;
-  color: var(--text-secondary);
-  line-height: 1.75;
-}
-
-.preview-card {
-  background: white;
-  border: 1px solid var(--border-light);
-  border-radius: 20px;
-  padding: 48px;
-  box-shadow: var(--shadow-lg);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.preview-card-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 32px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border-light);
-}
-.preview-card-dot { width: 12px; height: 12px; border-radius: 50%; }
-.preview-card-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--gold);
-  letter-spacing: 0.3px;
-}
-
-.preview-tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-}
-.preview-tab {
-  padding: 8px 18px;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.2s;
-}
-.preview-tab.active {
-  background: var(--primary-red);
-  color: white;
-}
-.preview-tab.inactive {
-  background: var(--bg-light);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-light);
-}
-
-.preview-data-rows { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 4px; 
-}
-.preview-data-row {
-  display: grid;
-  grid-template-columns: 110px 1fr 90px 90px;
-  gap: 16px;
-  padding: 14px 16px;
-  border-radius: 8px;
-  font-size: 13px;
-  align-items: center;
-}
-.preview-data-row.header {
-  color: var(--text-secondary);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 11px;
-  background: var(--bg-light);
-}
-.preview-data-row.even { background: var(--bg-light); }
-.preview-data-row .date { color: var(--text-secondary); }
-.preview-data-row .desc { color: var(--text-primary); font-weight: 500; }
-.preview-data-row .amount { color: var(--primary-red); font-weight: 700; }
-.preview-data-row .amount.credit { color: #10B981; }
-
-.preview-anomaly {
-  margin-top: 24px;
-  padding: 16px 20px;
-  background: #FEF2F2;
-  border: 1px solid #FEE2E2;
-  border-radius: 10px;
+.hero-card-header {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.preview-anomaly-icon {
-  width: 32px;
-  height: 32px;
-  background: var(--primary-red);
-  color: white;
+.hero-card-dot { width: 10px; height: 10px; border-radius: 50%; }
+.hero-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+.hero-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.hero-tab {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.hero-tab.active {
+  background: rgba(185,28,28,0.2);
+  color: #FCA5A5;
+  border: 1px solid rgba(185,28,28,0.3);
+}
+.hero-tab.inactive {
+  background: rgba(255,255,255,0.04);
+  color: var(--slate-light);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.hero-data-rows { display: flex; flex-direction: column; gap: 8px; }
+.hero-data-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 80px 80px;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  align-items: center;
+}
+.hero-data-row.header {
+  color: var(--slate-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 10px;
+}
+.hero-data-row.even { background: rgba(255,255,255,0.02); }
+.hero-data-row .date { color: var(--slate-light); }
+.hero-data-row .desc { color: rgba(255,255,255,0.8); }
+.hero-data-row .amount { color: #FCA5A5; font-weight: 600; font-variant-numeric: tabular-nums; }
+.hero-data-row .amount.credit { color: #86EFAC; }
+
+.hero-anomaly {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(185,28,28,0.1);
+  border: 1px solid rgba(185,28,28,0.2);
   border-radius: 8px;
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+.hero-anomaly-icon {
+  width: 28px; height: 28px;
+  background: rgba(185,28,28,0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 14px;
   flex-shrink: 0;
 }
-.preview-anomaly-text { 
-  font-size: 13px; 
-  color: var(--text-primary); 
-  font-weight: 500; 
-}
-.preview-anomaly-tag {
+.hero-anomaly-text { font-size: 12px; color: #FCA5A5; font-weight: 500; }
+.hero-anomaly-tag {
   margin-left: auto;
-  padding: 4px 12px;
-  background: var(--primary-red);
+  padding: 3px 10px;
+  background: rgba(185,28,28,0.3);
   border-radius: 100px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  color: white;
+  color: #FCA5A5;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 /* ===== TRUST BAR ===== */
 .trust-bar {
-  background: var(--bg-cream);
-  border-bottom: 1px solid var(--border-light);
-  padding: 32px 48px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 24px 32px;
 }
 .trust-bar-inner {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 64px;
+  gap: 48px;
   flex-wrap: wrap;
 }
 .trust-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--text-secondary);
+  gap: 8px;
+  font-size: 13px;
+  color: var(--slate);
   font-weight: 500;
 }
-.trust-item svg { width: 20px; height: 20px; color: var(--primary-blue); }
+.trust-item svg { width: 18px; height: 18px; color: var(--gold); }
 
 /* ===== STATS ===== */
-.stats { padding: 100px 48px; background: var(--bg-white); }
+.stats { padding: 80px 32px; background: white; }
 .stats-inner {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  background: var(--border-light);
-  border: 1px solid var(--border-light);
-  border-radius: 16px;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
   overflow: hidden;
 }
-.stat-item { 
-  background: white; 
-  padding: 56px 40px; 
-  text-align: center; 
-}
+.stat-item { background: white; padding: 40px 32px; text-align: center; }
 .stat-number {
   font-family: 'DM Serif Display', serif;
-  font-size: 56px;
-  color: var(--primary-blue);
-  margin-bottom: 8px;
-  letter-spacing: -0.02em;
+  font-size: 42px;
+  color: var(--navy);
+  margin-bottom: 4px;
 }
-.stat-number span { color: var(--primary-red); }
-.stat-label { 
-  font-size: 15px; 
-  color: var(--text-secondary); 
-  font-weight: 500; 
-}
+.stat-number span { color: var(--crimson); }
+.stat-label { font-size: 14px; color: var(--slate); font-weight: 500; }
 
 /* ===== HOW IT WORKS ===== */
-.how-it-works { padding: 120px 48px; background: var(--bg-light); }
+.how-it-works { padding: 100px 32px; background: var(--bg-subtle); }
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+.section-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--crimson);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.section-header h2 {
+  font-size: clamp(32px, 4vw, 44px);
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.section-header p {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.7;
+}
 
 .steps-grid {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 32px;
+  position: relative;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 52px;
+  left: 20%; right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--border), var(--gold), var(--border));
+  z-index: 0;
 }
 .step-card {
   background: white;
-  border-radius: 16px;
-  padding: 48px 40px;
+  border-radius: 12px;
+  padding: 40px 32px;
   text-align: center;
-  border: 1px solid var(--border-light);
-  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .step-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-red);
+  box-shadow: 0 12px 40px rgba(11,29,51,0.08);
 }
 .step-number {
-  width: 56px;
-  height: 56px;
-  background: var(--primary-red);
+  width: 48px; height: 48px;
+  background: var(--navy);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'DM Serif Display', serif;
-  font-size: 24px;
-  color: white;
-  margin: 0 auto 28px;
+  font-size: 20px;
+  color: var(--gold);
+  margin: 0 auto 24px;
 }
-.step-card h3 { 
-  font-size: 24px; 
-  color: var(--text-primary); 
-  margin-bottom: 16px; 
-}
-.step-card p { 
-  font-size: 16px; 
-  color: var(--text-secondary); 
-  line-height: 1.75; 
-}
+.step-card h3 { font-size: 22px; color: var(--navy); margin-bottom: 12px; }
+.step-card p { font-size: 15px; color: var(--slate); line-height: 1.7; }
 
 /* ===== SERVICES ===== */
-.services { padding: 120px 48px; background: var(--bg-white); }
+.services { padding: 100px 32px; background: white; }
 .services-grid {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 20px;
 }
 
 .service-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 14px;
   overflow: hidden;
-  height: 420px;
+  height: 380px;
   cursor: pointer;
-  transition: all 0.4s;
-  border: 1px solid var(--border-light);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 50px rgba(11,29,51,0.2);
 }
 
+/* Background image layer */
 .service-card .card-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  transition: transform 0.6s;
+  transition: transform 0.6s ease;
 }
 .service-card:hover .card-bg {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
+/* Color overlay */
 .service-card .card-overlay {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  transition: opacity 0.4s;
-}
-.service-card.red .card-overlay {
-  background: linear-gradient(160deg, rgba(220,38,38,0.85) 0%, rgba(185,28,28,0.92) 100%);
+  transition: opacity 0.4s ease;
 }
 .service-card.blue .card-overlay {
-  background: linear-gradient(160deg, rgba(30,64,175,0.85) 0%, rgba(17,24,39,0.92) 100%);
+  background: linear-gradient(160deg, rgba(27,86,160,0.82) 0%, rgba(11,29,51,0.88) 100%);
+}
+.service-card.crimson .card-overlay {
+  background: linear-gradient(160deg, rgba(185,28,28,0.78) 0%, rgba(91,14,14,0.88) 100%);
+}
+.service-card.teal .card-overlay {
+  background: linear-gradient(160deg, rgba(15,80,80,0.80) 0%, rgba(11,41,51,0.88) 100%);
+}
+.service-card:hover .card-overlay {
+  opacity: 0.92;
 }
 
+/* Content layer */
 .service-card .card-content {
   position: relative;
   z-index: 2;
@@ -592,60 +569,71 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 40px 32px;
+  padding: 32px 28px;
 }
 
 .service-card .card-icon {
   position: absolute;
-  top: 32px;
-  left: 32px;
+  top: 28px;
+  left: 28px;
   z-index: 2;
 }
 .service-card .card-icon svg {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   stroke: var(--gold);
   fill: none;
   stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .service-card h3 {
-  font-size: 28px;
+  font-size: 24px;
   color: white;
-  margin-bottom: 12px;
-  letter-spacing: -0.01em;
+  margin-bottom: 10px;
 }
 .service-card p {
-  font-size: 15px;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.7;
-  margin-bottom: 20px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.65;
+  margin-bottom: 16px;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all 0.4s;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 .service-card:hover p {
-  max-height: 120px;
+  max-height: 100px;
   opacity: 1;
 }
 
 .service-card .learn-more {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  gap: 6px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--gold);
   text-decoration: none;
+  letter-spacing: 0.3px;
   transition: gap 0.3s;
 }
-.service-card:hover .learn-more { gap: 12px; }
+.service-card:hover .learn-more { gap: 10px; }
+.service-card .learn-more svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 2;
+  transition: transform 0.3s;
+}
+.service-card:hover .learn-more svg { transform: translateX(2px); }
 
-/* ===== PLATFORM ===== */
+/* ===== PLATFORM / TOOLS ===== */
 .platform {
-  padding: 120px 48px;
-  background: var(--primary-blue);
+  padding: 100px 32px;
+  background: var(--navy);
   position: relative;
   overflow: hidden;
 }
@@ -653,151 +641,116 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 0% 50%, rgba(197,165,114,0.08) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(197,165,114,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgba(185,28,28,0.04) 0%, transparent 40%);
 }
 .platform .section-label { color: var(--gold); }
 .platform .section-header h2 { color: white; }
-.platform .section-header p { color: rgba(255,255,255,0.8); }
+.platform .section-header p { color: var(--slate-light); }
 
 .tool-showcase {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 40px;
   position: relative;
   z-index: 1;
 }
 .tool-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 56px;
+  gap: 40px;
   align-items: center;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 24px;
-  padding: 56px;
-  transition: all 0.3s;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 40px;
+  transition: border-color 0.3s;
 }
-.tool-row:hover { 
-  border-color: rgba(197,165,114,0.25); 
-  background: rgba(255,255,255,0.06);
-}
+.tool-row:hover { border-color: rgba(197,165,114,0.2); }
 .tool-row.reverse { direction: rtl; }
 .tool-row.reverse > * { direction: ltr; }
 
-.tool-info { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 20px; 
-}
+.tool-info { display: flex; flex-direction: column; gap: 16px; }
 .tool-badge {
   display: inline-flex;
   align-self: flex-start;
-  padding: 6px 16px;
+  padding: 5px 14px;
   border-radius: 100px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.tool-badge.red { background: rgba(220,38,38,0.25); color: #FCA5A5; }
-.tool-badge.blue { background: rgba(59,130,246,0.25); color: #93C5FD; }
-.tool-badge.green { background: rgba(16,185,129,0.25); color: #6EE7B7; }
+.tool-badge.red { background: rgba(185,28,28,0.2); color: #FCA5A5; }
+.tool-badge.blue { background: rgba(59,130,246,0.2); color: #93C5FD; }
+.tool-badge.green { background: rgba(22,163,74,0.2); color: #86EFAC; }
+.tool-badge.gold { background: rgba(197,165,114,0.2); color: var(--gold-light); }
 
-.tool-info h3 { 
-  font-size: 32px; 
-  color: white; 
-  letter-spacing: -0.01em; 
-}
-.tool-info p { 
-  font-size: 16px; 
-  color: rgba(255,255,255,0.75); 
-  line-height: 1.75; 
-}
-.tool-features { display: flex; flex-wrap: wrap; gap: 10px; }
+.tool-info h3 { font-size: 26px; color: white; }
+.tool-info p { font-size: 15px; color: var(--slate-light); line-height: 1.7; }
+.tool-features { display: flex; flex-wrap: wrap; gap: 8px; }
 .tool-feature {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.75);
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
   font-weight: 500;
 }
-.tool-feature::before { 
-  content: '✓'; 
-  color: var(--gold); 
-  font-weight: 700; 
-}
+.tool-feature::before { content: '✓'; color: var(--gold); font-size: 11px; font-weight: 700; }
 
 .tool-visual {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 16px;
-  padding: 32px;
-  min-height: 240px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 24px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 /* ===== WHO WE SERVE ===== */
-.audience { padding: 120px 48px; background: var(--bg-light); }
+.audience { padding: 80px 32px; background: var(--bg-subtle); }
+.audience-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 80px;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 24px;
+  margin-top: 48px;
 }
 .audience-card {
   background: white;
-  border: 1px solid var(--border-light);
-  border-radius: 16px;
-  padding: 48px 40px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 28px;
   transition: all 0.3s;
 }
-.audience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-blue);
-}
+.audience-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(11,29,51,0.08); }
 .audience-card-icon {
-  width: 64px;
-  height: 64px;
-  background: rgba(30,64,175,0.08);
-  border-radius: 14px;
+  width: 56px; height: 56px;
+  background: rgba(11,29,51,0.06);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  margin: 0 auto 24px;
+  font-size: 26px;
+  margin: 0 auto 20px;
 }
-.audience-card h3 { 
-  font-size: 22px; 
-  color: var(--text-primary); 
-  margin-bottom: 12px; 
-  text-align: center;
-}
-.audience-card p { 
-  font-size: 15px; 
-  color: var(--text-secondary); 
-  line-height: 1.75; 
-  text-align: center;
-}
+.audience-card h3 { font-size: 20px; color: var(--navy); margin-bottom: 10px; }
+.audience-card p { font-size: 14px; color: var(--slate); line-height: 1.7; }
 
 /* ===== CTA ===== */
 .cta-section {
-  padding: 120px 48px;
-  background: 
-    linear-gradient(135deg, rgba(220,38,38,0.93) 0%, rgba(185,28,28,0.90) 100%),
-    url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=85') center/cover;
+  padding: 100px 32px;
+  background: var(--navy);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -806,221 +759,187 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(197,165,114,0.15) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(197,165,114,0.08) 0%, transparent 60%);
 }
-.cta-inner { 
-  max-width: 800px; 
-  margin: 0 auto; 
-  position: relative; 
-  z-index: 1; 
-}
+.cta-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
 .cta-section h2 {
-  font-size: clamp(40px, 5vw, 56px);
+  font-size: clamp(32px, 4vw, 44px);
   color: white;
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
-  text-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  margin-bottom: 16px;
 }
-.cta-section h2 em { 
-  font-style: italic; 
-  color: var(--gold); 
-}
+.cta-section h2 em { font-style: italic; color: var(--gold); }
 .cta-sub {
-  font-size: 20px;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.75;
-  margin-bottom: 48px;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  font-size: 17px;
+  color: var(--slate-light);
+  line-height: 1.7;
+  margin-bottom: 40px;
 }
-.cta-buttons { 
-  display: flex; 
-  gap: 16px; 
-  justify-content: center; 
-  flex-wrap: wrap; 
-  margin-bottom: 56px; 
-}
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
 
-.cta-contact-row { 
-  display: flex; 
-  justify-content: center; 
-  gap: 48px; 
-  flex-wrap: wrap; 
-}
+.cta-contact-row { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
 .cta-contact-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 15px;
-  color: rgba(255,255,255,0.88);
+  gap: 10px;
+  font-size: 14px;
+  color: var(--slate-light);
 }
 .cta-contact-item a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
 }
 .cta-contact-item a:hover { color: var(--gold); }
 .cta-contact-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 10px;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--gold);
-  backdrop-filter: blur(8px);
 }
 
 /* ===== FOOTER ===== */
 .footer {
-  background: white;
-  padding: 80px 48px 40px;
-  border-top: 1px solid var(--border-light);
+  background: #000000;
+  padding: 64px 32px 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
-.footer-inner { max-width: 1280px; margin: 0 auto; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 64px;
-  margin-bottom: 56px;
+  gap: 48px;
+  margin-bottom: 48px;
 }
 .footer-brand p {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.75;
-  margin-top: 16px;
-  max-width: 320px;
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-top: 12px;
+  max-width: 280px;
 }
 .footer-col h4 {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .footer-col a {
   display: block;
-  font-size: 15px;
-  color: var(--text-secondary);
+  font-size: 14px;
+  color: var(--slate);
   text-decoration: none;
-  padding: 6px 0;
-  transition: all 0.2s;
+  padding: 4px 0;
+  transition: color 0.2s;
 }
-.footer-col a:hover {
-  color: var(--primary-red);
-  padding-left: 4px;
-}
+.footer-col a:hover { color: var(--gold); }
 
 .footer-bottom {
-  padding-top: 32px;
-  border-top: 1px solid var(--border-light);
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
-.footer-bottom p { 
-  font-size: 14px; 
-  color: var(--text-secondary); 
-}
-.footer-bottom-links { display: flex; gap: 32px; }
-.footer-bottom-links a {
-  font-size: 14px;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-bottom-links a:hover { color: var(--primary-red); }
+.footer-bottom p { font-size: 13px; color: var(--slate); }
+.footer-bottom-links { display: flex; gap: 24px; }
+.footer-bottom-links a { font-size: 13px; color: var(--slate); text-decoration: none; transition: color 0.2s; }
+.footer-bottom-links a:hover { color: var(--gold); }
 
-/* ===== PRIVACY MODAL ===== */
+/* ===== PRIVACY POLICY MODAL ===== */
 .modal-overlay {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
   z-index: 200;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 32px;
 }
 .modal-overlay.active { display: flex; }
 
 .modal-content {
   background: white;
-  border-radius: 20px;
-  max-width: 800px;
+  border-radius: 16px;
+  max-width: 720px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
-  padding: 56px;
+  padding: 48px;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 .modal-close {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 40px;
-  height: 40px;
+  top: 20px;
+  right: 20px;
+  width: 36px; height: 36px;
   border-radius: 50%;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border);
   background: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  color: var(--text-secondary);
+  font-size: 18px;
+  color: var(--slate);
   transition: all 0.2s;
 }
-.modal-close:hover { 
-  background: var(--bg-light); 
-  color: var(--text-primary); 
-}
+.modal-close:hover { background: var(--bg-subtle); color: var(--navy); }
 
 .modal-content h2 {
-  font-size: 32px;
-  color: var(--text-primary);
+  font-size: 28px;
+  color: var(--navy);
   margin-bottom: 8px;
 }
 .modal-content .policy-date {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 40px;
+  font-size: 13px;
+  color: var(--slate);
+  margin-bottom: 32px;
 }
 .modal-content h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--text-primary);
-  margin: 36px 0 16px;
+  color: var(--navy);
+  margin: 28px 0 12px;
 }
 .modal-content p {
-  font-size: 15px;
-  color: var(--text-secondary);
+  font-size: 14.5px;
+  color: #475569;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 /* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  50% { opacity: 0.4; }
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .hero-inner, .stats-inner, .services-grid, .audience-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { max-width: 560px; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
   .tool-row, .tool-row.reverse { grid-template-columns: 1fr; direction: ltr; }
+  .tool-row.reverse > * { direction: ltr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .steps-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -1028,20 +947,31 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
+    top: 72px;
+    left: 0; right: 0;
     background: white;
-    padding: 32px 48px;
-    border-bottom: 1px solid var(--border-light);
-    box-shadow: var(--shadow-md);
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
   }
   .mobile-toggle { display: flex; }
-  .hero { padding: 140px 24px 80px; }
-  .hero h1 { font-size: 40px; }
-  .services-grid, .audience-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .preview-data-row { grid-template-columns: 80px 1fr 70px 70px; font-size: 11px; }
+  .hero { padding: 120px 20px 60px; }
+  .hero h1 { font-size: 34px; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .steps-grid::before { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .audience-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-data-row { grid-template-columns: 70px 1fr 60px 60px; font-size: 10px; }
+  .cta-contact-row { flex-direction: column; align-items: center; }
+  .modal-content { padding: 32px 24px; }
+}
+@media (max-width: 480px) {
+  .stats-inner { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-secondary { width: 100%; justify-content: center; }
+  .trust-bar-inner { gap: 24px; }
 }
 </style>
 </head>
@@ -1058,7 +988,7 @@ h1, h2, h3, h4 {
       <li><a href="#top">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#platform">Platform</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#contact" class="nav-cta">Book a Call →</a></li>
     </ul>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -1067,7 +997,7 @@ h1, h2, h3, h4 {
   </div>
 </nav>
 
-<!-- ===== HERO (PREMIUM WITH VISIBLE IMAGE) ===== -->
+<!-- ===== HERO ===== -->
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-content">
@@ -1076,72 +1006,65 @@ h1, h2, h3, h4 {
       <p class="hero-sub">We help attorneys and financial professionals uncover hidden assets, trace spending patterns, and deliver litigation-ready forensic reports — in days, not weeks.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Book a Free Strategy Call
         </a>
         <a href="#platform" class="btn-secondary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           See How It Works
         </a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== PLATFORM PREVIEW (TABLE MOVED HERE) ===== -->
-<section class="platform-preview">
-  <div class="preview-inner">
-    <div class="section-header">
-      <span class="section-label">See It In Action</span>
-      <h2>Forensic Analysis Engine Output</h2>
-      <p>Real-time anomaly detection and litigation-ready reporting — automatically generated from your financial documents.</p>
-    </div>
-    <div class="preview-card">
-      <div class="preview-card-header">
-        <div class="preview-card-dot" style="background: #DC2626;"></div>
-        <div class="preview-card-dot" style="background: var(--gold);"></div>
-        <div class="preview-card-dot" style="background: #10B981;"></div>
-        <span class="preview-card-title">Forensic Analysis Engine — Output Preview</span>
-      </div>
-      <div class="preview-tabs">
-        <span class="preview-tab active">Anomaly Report</span>
-        <span class="preview-tab inactive">Heatmap</span>
-        <span class="preview-tab inactive">Spend</span>
-        <span class="preview-tab inactive">Transfers</span>
-      </div>
-      <div class="preview-data-rows">
-        <div class="preview-data-row header">
-          <span>Date</span><span>Description</span><span>Debit</span><span>Score</span>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-dot" style="background: var(--crimson);"></div>
+          <div class="hero-card-dot" style="background: var(--gold);"></div>
+          <div class="hero-card-dot" style="background: #16A34A;"></div>
+          <span class="hero-card-title">Forensic Analysis Engine — Output Preview</span>
         </div>
-        <div class="preview-data-row even">
-          <span class="date">03-15-24</span>
-          <span class="desc">WIRE TRF TO OFFSHORE</span>
-          <span class="amount">$47,200</span>
-          <span class="amount">9.2</span>
+        <div class="hero-tabs">
+          <span class="hero-tab active">Anomaly Report</span>
+          <span class="hero-tab inactive">Heatmap</span>
+          <span class="hero-tab inactive">Spend Analysis</span>
+          <span class="hero-tab inactive">Earnings</span>
+          <span class="hero-tab inactive">Transfers</span>
+          <span class="hero-tab inactive">AI Insights</span>
         </div>
-        <div class="preview-data-row">
-          <span class="date">03-22-24</span>
-          <span class="desc">VENMO *UNDISCLOSED</span>
-          <span class="amount">$8,500</span>
-          <span class="amount">8.7</span>
+        <div class="hero-data-rows">
+          <div class="hero-data-row header">
+            <span>Date</span><span>Description</span><span>Debit</span><span>Score</span>
+          </div>
+          <div class="hero-data-row even">
+            <span class="date">03-15-24</span>
+            <span class="desc">WIRE TRF TO OFFSHORE ACCT</span>
+            <span class="amount">$47,200</span>
+            <span class="amount">9.2</span>
+          </div>
+          <div class="hero-data-row">
+            <span class="date">03-22-24</span>
+            <span class="desc">VENMO *UNDISCLOSED PAYEE</span>
+            <span class="amount">$8,500</span>
+            <span class="amount">8.7</span>
+          </div>
+          <div class="hero-data-row even">
+            <span class="date">04-01-24</span>
+            <span class="desc">ATM WITHDRAWAL — CASH</span>
+            <span class="amount">$15,000</span>
+            <span class="amount">8.1</span>
+          </div>
+          <div class="hero-data-row">
+            <span class="date">04-11-24</span>
+            <span class="desc">CHECK #4472 — UNKNOWN</span>
+            <span class="amount">$22,750</span>
+            <span class="amount">7.9</span>
+          </div>
         </div>
-        <div class="preview-data-row even">
-          <span class="date">04-01-24</span>
-          <span class="desc">ATM WITHDRAWAL</span>
-          <span class="amount">$15,000</span>
-          <span class="amount">8.1</span>
+        <div class="hero-anomaly">
+          <div class="hero-anomaly-icon">⚠</div>
+          <span class="hero-anomaly-text">3 anomalies flagged · Potential hidden transfers detected</span>
+          <span class="hero-anomaly-tag">High Risk</span>
         </div>
-        <div class="preview-data-row">
-          <span class="date">04-11-24</span>
-          <span class="desc">CHECK #4472</span>
-          <span class="amount">$22,750</span>
-          <span class="amount">7.9</span>
-        </div>
-      </div>
-      <div class="preview-anomaly">
-        <div class="preview-anomaly-icon">⚠</div>
-        <span class="preview-anomaly-text">3 anomalies flagged · High-risk transfers detected</span>
-        <span class="preview-anomaly-tag">High Risk</span>
       </div>
     </div>
   </div>
@@ -1163,7 +1086,7 @@ h1, h2, h3, h4 {
       Dedicated Point of Contact
     </div>
     <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
       Personal QC on Every Deliverable
     </div>
   </div>
@@ -1174,25 +1097,25 @@ h1, h2, h3, h4 {
   <div class="stats-inner">
     <div class="stat-item">
       <div class="stat-number">3<span>x</span></div>
-      <div class="stat-label">Faster Than Manual</div>
+      <div class="stat-label">Faster Than Manual Effort</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">6<span>-Tab</span></div>
-      <div class="stat-label">Forensic Reports</div>
+      <div class="stat-label">Comprehensive Forensic Reports</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">3<span>-Layer</span></div>
-      <div class="stat-label">AI Engine</div>
+      <div class="stat-label">AI + Rule-Based Engine</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">5<span>+</span></div>
-      <div class="stat-label">Years Experience</div>
+      <div class="stat-label">Years of Analytics Experience</div>
     </div>
   </div>
 </section>
 
 <!-- ===== HOW IT WORKS ===== -->
-<section class="how-it-works" id="how-it-works">
+<section class="how-it-works" id="about">
   <div class="section-header">
     <span class="section-label">How It Works</span>
     <h2>What Takes 40 Hours by Hand, We Do in 10</h2>
@@ -1212,7 +1135,7 @@ h1, h2, h3, h4 {
     <div class="step-card">
       <div class="step-number">3</div>
       <h3>Deliver</h3>
-      <p>Receive a comprehensive 6-tab forensic report with anomaly scoring, interbank transfer matching, spend analysis, and narrative summaries.</p>
+      <p>Receive a comprehensive 6-tab forensic report with anomaly scoring, interbank transfer matching, spend analysis, and narrative summaries — reviewed by our analysts.</p>
     </div>
   </div>
 </section>
@@ -1226,88 +1149,94 @@ h1, h2, h3, h4 {
   </div>
   <div class="services-grid">
 
-    <div class="service-card red">
-      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80');"></div>
+    <!-- Divorce & Family Law -->
+    <div class="service-card blue">
+      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80');"></div>
       <div class="card-overlay"></div>
       <div class="card-icon">
         <svg viewBox="0 0 48 48"><path d="M24 6v8M24 14l-8 12h16L24 14zM10 38h28M16 26v12M32 26v12M8 32h8M32 32h8"/></svg>
       </div>
       <div class="card-content">
-        <h3>Divorce &<br>Family Law</h3>
+        <h3>Divorce &amp;<br>Family Law</h3>
         <p>Identify hidden income patterns, trace marital asset dissipation, and produce forensic reports for property division.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
+        <a href="#contact" class="learn-more">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
-    <div class="service-card blue">
-      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80');"></div>
+    <!-- Economic Damages -->
+    <div class="service-card crimson">
+      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80');"></div>
       <div class="card-overlay"></div>
       <div class="card-icon">
-        <svg viewBox="0 0 48 48"><path d="M6 38V18l8-6 8 6 8-6 8 6v20M14 38v-8h8v8M26 38v-12h8v12M6 38h36"/></svg>
+        <svg viewBox="0 0 48 48"><path d="M6 38V18l8-6 8 6 8-6 8 6v20"/><path d="M14 38v-8h8v8M26 38v-12h8v12"/><path d="M6 38h36"/></svg>
       </div>
       <div class="card-content">
         <h3>Economic<br>Damages</h3>
         <p>Precise damage calculations, lost profits analysis, and business valuation backed by AI-verified computations.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
+        <a href="#contact" class="learn-more">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
-    <div class="service-card red">
+    <!-- Document Analysis -->
+    <div class="service-card teal">
       <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80');"></div>
       <div class="card-overlay"></div>
       <div class="card-icon">
-        <svg viewBox="0 0 48 48"><path d="M12 6h18l8 8v28H12V6zM30 6v8h8M18 20h12M18 26h12M18 32h8"/></svg>
+        <svg viewBox="0 0 48 48"><path d="M12 6h18l8 8v28H12V6z"/><path d="M30 6v8h8"/><path d="M18 20h12M18 26h12M18 32h8"/></svg>
       </div>
       <div class="card-content">
         <h3>Document<br>Analysis</h3>
         <p>AI-powered extraction and structuring of financial records into organized, searchable formats ready for production.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
+        <a href="#contact" class="learn-more">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
+    <!-- Bankruptcy & Restructuring -->
     <div class="service-card blue">
-      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80');"></div>
+      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80');"></div>
       <div class="card-overlay"></div>
       <div class="card-icon">
-        <svg viewBox="0 0 48 48"><path d="M24 4v8M16 8l8 4 8-4M8 20h32v4H8zM12 24v14M20 24v14M28 24v14M36 24v14M6 38h36v4H6z"/></svg>
+        <svg viewBox="0 0 48 48"><path d="M24 4v8M16 8l8 4 8-4"/><path d="M8 20h32v4H8z"/><path d="M12 24v14M20 24v14M28 24v14M36 24v14"/><path d="M6 38h36v4H6z"/></svg>
       </div>
       <div class="card-content">
-        <h3>Bankruptcy &<br>Restructuring</h3>
+        <h3>Bankruptcy &amp;<br>Restructuring</h3>
         <p>Comprehensive financial tracing, asset reconstruction, and preference analysis for bankruptcy proceedings.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
+        <a href="#contact" class="learn-more">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
-    <div class="service-card red">
-      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80');"></div>
+    <!-- Intellectual Property -->
+    <div class="service-card crimson">
+      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80');"></div>
       <div class="card-overlay"></div>
       <div class="card-icon">
-        <svg viewBox="0 0 48 48"><path d="M24 44c11 0 20-9 20-20S35 4 24 4 4 13 4 24s9 20 20 20zM18 18c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6v4"/><circle cx="24" cy="34" r="2"/></svg>
+        <svg viewBox="0 0 48 48"><path d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20z"/><path d="M18 18c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6v4"/><circle cx="24" cy="34" r="2"/></svg>
       </div>
       <div class="card-content">
         <h3>Intellectual<br>Property</h3>
         <p>IP valuation, infringement analysis, and damage assessment for patent and trade secret disputes.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
+        <a href="#contact" class="learn-more">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
-    <div class="service-card blue">
-      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=600&q=80');"></div>
+    <!-- Litigation Support -->
+    <div class="service-card teal">
+      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=600&q=80');"></div>
       <div class="card-overlay"></div>
       <div class="card-icon">
-        <svg viewBox="0 0 48 48"><path d="M24 4l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8zM12 32h24M12 38h24M16 44h16"/></svg>
+        <svg viewBox="0 0 48 48"><path d="M24 4l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8z"/><path d="M12 32h24M12 38h24M16 44h16"/></svg>
       </div>
       <div class="card-content">
         <h3>Litigation<br>Support</h3>
         <p>Strategic consulting, expert testimony preparation, financial investigation, and trial-ready analytics.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
+        <a href="#contact" class="learn-more">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ===== PLATFORM ===== -->
+<!-- ===== PLATFORM / TOOLS ===== -->
 <section class="platform" id="platform">
   <div class="section-header">
     <span class="section-label">Our Platform</span>
@@ -1315,6 +1244,7 @@ h1, h2, h3, h4 {
     <p>Every tool in our platform is purpose-built for litigation workflows. Not repurposed accounting software — real forensic engines.</p>
   </div>
   <div class="tool-showcase">
+    <!-- Tool 1: Forensic Analysis Engine -->
     <div class="tool-row">
       <div class="tool-info">
         <span class="tool-badge red">Litigation-Ready Reports</span>
@@ -1324,43 +1254,46 @@ h1, h2, h3, h4 {
           <span class="tool-feature">Hidden Income Detection</span>
           <span class="tool-feature">Anomaly Scoring</span>
           <span class="tool-feature">Interbank Transfer Matching</span>
+          <span class="tool-feature">Spend &amp; Earn Analysis</span>
         </div>
       </div>
-      <div class="tool-visual" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;">
-        <div style="font-size:12px;color:var(--gold);margin-bottom:20px;font-weight:700;text-transform:uppercase;">6-Tab Forensic Report</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="padding:12px 16px;background:rgba(220,38,38,0.2);border-radius:8px;font-size:13px;color:#FCA5A5;">● Anomaly Report (High-Risk Scoring)</div>
-          <div style="padding:12px 16px;background:rgba(255,255,255,0.06);border-radius:8px;font-size:13px;color:rgba(255,255,255,0.7);">● Account Transaction Heatmap</div>
-          <div style="padding:12px 16px;background:rgba(255,255,255,0.06);border-radius:8px;font-size:13px;color:rgba(255,255,255,0.7);">● Matched Interbank Transfers</div>
-          <div style="padding:12px 16px;background:rgba(255,255,255,0.06);border-radius:8px;font-size:13px;color:rgba(255,255,255,0.7);">● Earning Analysis</div>
-          <div style="padding:12px 16px;background:rgba(255,255,255,0.06);border-radius:8px;font-size:13px;color:rgba(255,255,255,0.7);">● Spend Analysis</div>
-          <div style="padding:12px 16px;background:rgba(255,255,255,0.06);border-radius:8px;font-size:13px;color:rgba(255,255,255,0.7);">● AI Narrative Insights</div>
+      <div class="tool-visual">
+        <div style="font-size:11px;color:var(--gold);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">6-Tab Forensic Report</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="padding:10px 14px;background:rgba(185,28,28,0.2);border-radius:6px;font-size:12px;color:#FCA5A5;font-weight:500;">● Anomaly Report (High-Risk Scoring)</div>
+          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● Account Transaction Heatmap</div>
+          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● Matched Interbank Transfers</div>
+          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● Earning Analysis</div>
+          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● Spend Analysis</div>
+          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● AI Narrative Insights</div>
         </div>
       </div>
     </div>
-
+    <!-- Tool 2: Bank Extraction -->
     <div class="tool-row reverse">
       <div class="tool-info">
         <span class="tool-badge blue">Multi-Bank Support</span>
         <h3>Bank Statement Extraction</h3>
-        <p>Automated transaction extraction from any bank format — Chase, AmEx, Wells Fargo, regional banks. Outputs structured Excel with 17-column schema.</p>
+        <p>Automated transaction extraction from any bank format — Chase, AmEx, Wells Fargo, regional banks. Outputs structured Excel with 17-column schema, categorized and reconciled.</p>
         <div class="tool-features">
           <span class="tool-feature">Any Bank Format</span>
           <span class="tool-feature">Balance Reconciliation</span>
           <span class="tool-feature">Auto-Categorization</span>
+          <span class="tool-feature">17-Column Schema</span>
         </div>
       </div>
-      <div class="tool-visual" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;">
-        <div style="font-size:12px;color:var(--gold);margin-bottom:18px;font-weight:700;">Sample Extraction Output</div>
-        <div style="display:grid;grid-template-columns:90px 1fr 80px;gap:8px;font-size:12px;margin-bottom:20px;">
-          <div style="color:rgba(255,255,255,0.6);font-weight:600;">Date</div><div style="color:rgba(255,255,255,0.6);font-weight:600;">Description</div><div style="color:rgba(255,255,255,0.6);font-weight:600;">Amount</div>
-          <div style="color:rgba(255,255,255,0.5);">01-15-24</div><div style="color:rgba(255,255,255,0.75);">DIRECT DEPOSIT</div><div style="color:#6EE7B7;">$5,200</div>
-          <div style="color:rgba(255,255,255,0.5);">01-16-24</div><div style="color:rgba(255,255,255,0.75);">WIRE TRANSFER</div><div style="color:#FCA5A5;">-$3,400</div>
+      <div class="tool-visual">
+        <div style="font-size:11px;color:var(--gold);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Sample Extraction Output</div>
+        <div style="display:grid;grid-template-columns:80px 1fr 70px 70px;gap:6px;font-size:11px;">
+          <div style="color:var(--slate-light);font-weight:600;">Date</div><div style="color:var(--slate-light);font-weight:600;">Description</div><div style="color:var(--slate-light);font-weight:600;">Debit</div><div style="color:var(--slate-light);font-weight:600;">Credit</div>
+          <div style="color:rgba(255,255,255,0.5);">01-15-24</div><div style="color:rgba(255,255,255,0.7);">DIRECT DEPOSIT - EMPLOYER</div><div style="color:var(--slate-light);">—</div><div style="color:#86EFAC;">$5,200</div>
+          <div style="color:rgba(255,255,255,0.5);">01-16-24</div><div style="color:rgba(255,255,255,0.7);">WIRE TRANSFER OUT</div><div style="color:#FCA5A5;">$3,400</div><div style="color:var(--slate-light);">—</div>
+          <div style="color:rgba(255,255,255,0.5);">01-18-24</div><div style="color:rgba(255,255,255,0.7);">CHECK #2847</div><div style="color:#FCA5A5;">$1,250</div><div style="color:var(--slate-light);">—</div>
         </div>
-        <div style="padding:10px 14px;background:rgba(16,185,129,0.15);border-radius:8px;font-size:12px;color:#6EE7B7;">✓ Balance reconciled: $12,847.33</div>
+        <div style="margin-top:14px;padding:8px 12px;background:rgba(22,163,74,0.1);border-radius:6px;font-size:11px;color:#86EFAC;">✓ Closing balance reconciled: $12,847.33</div>
       </div>
     </div>
-
+    <!-- Tool 3: Quality Control -->
     <div class="tool-row">
       <div class="tool-info">
         <span class="tool-badge green">Forensic-Grade QC</span>
@@ -1369,17 +1302,20 @@ h1, h2, h3, h4 {
         <div class="tool-features">
           <span class="tool-feature">9-Point Validation</span>
           <span class="tool-feature">Balance Matching</span>
+          <span class="tool-feature">Category Breakdowns</span>
           <span class="tool-feature">Numeric Scoring</span>
         </div>
       </div>
-      <div class="tool-visual" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;text-align:center;">
-        <div style="font-family:'DM Serif Display',serif;font-size:56px;color:#6EE7B7;margin-bottom:12px;">100%</div>
-        <div style="font-size:14px;color:var(--gold);font-weight:600;margin-bottom:24px;">QC Score — Forensic Grade</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="padding:10px 14px;background:rgba(16,185,129,0.12);border-radius:8px;font-size:12px;color:#6EE7B7;">✓ Opening Balance Match</div>
-          <div style="padding:10px 14px;background:rgba(16,185,129,0.12);border-radius:8px;font-size:12px;color:#6EE7B7;">✓ Total Credits Verified</div>
-          <div style="padding:10px 14px;background:rgba(16,185,129,0.12);border-radius:8px;font-size:12px;color:#6EE7B7;">✓ Closing Balance Match</div>
+      <div class="tool-visual">
+        <div style="font-size:11px;color:var(--gold);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">QC Validation Results</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(22,163,74,0.08);border-radius:6px;"><span style="color:#86EFAC;font-size:12px;">✓ Opening Balance Match</span><span style="color:#86EFAC;font-size:11px;font-weight:700;">PASS</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(22,163,74,0.08);border-radius:6px;"><span style="color:#86EFAC;font-size:12px;">✓ Total Credits Verified</span><span style="color:#86EFAC;font-size:11px;font-weight:700;">PASS</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(22,163,74,0.08);border-radius:6px;"><span style="color:#86EFAC;font-size:12px;">✓ Total Debits Verified</span><span style="color:#86EFAC;font-size:11px;font-weight:700;">PASS</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(22,163,74,0.08);border-radius:6px;"><span style="color:#86EFAC;font-size:12px;">✓ Closing Balance Match</span><span style="color:#86EFAC;font-size:11px;font-weight:700;">PASS</span></div>
         </div>
+        <div style="margin-top:14px;text-align:center;font-family:'DM Serif Display',serif;font-size:36px;color:#86EFAC;">100%</div>
+        <div style="text-align:center;font-size:11px;color:var(--slate-light);">QC Score — Forensic Grade</div>
       </div>
     </div>
   </div>
@@ -1387,25 +1323,27 @@ h1, h2, h3, h4 {
 
 <!-- ===== WHO WE SERVE ===== -->
 <section class="audience">
-  <div class="section-header">
-    <span class="section-label">Who We Serve</span>
-    <h2>Built for Legal & Financial Professionals</h2>
-  </div>
-  <div class="audience-grid">
-    <div class="audience-card">
-      <div class="audience-card-icon">⚖</div>
-      <h3>Attorneys & Law Firms</h3>
-      <p>Forensic reports that uncover hidden income and asset dissipation — structured for depositions, mediations, and trial exhibits.</p>
+  <div class="audience-inner">
+    <div class="section-header">
+      <span class="section-label">Who We Serve</span>
+      <h2>Built for Legal &amp; Financial Professionals</h2>
     </div>
-    <div class="audience-card">
-      <div class="audience-card-icon">📋</div>
-      <h3>CDFA Practitioners</h3>
-      <p>Comprehensive financial analysis that supports your settlement recommendations with litigation-ready documentation.</p>
-    </div>
-    <div class="audience-card">
-      <div class="audience-card-icon">🏛</div>
-      <h3>Litigation & Advisory Teams</h3>
-      <p>Scalable document processing, bank statement extraction, and forensic analysis for complex multi-entity financial disputes.</p>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-card-icon">⚖</div>
+        <h3>Attorneys &amp; Law Firms</h3>
+        <p>Forensic reports that uncover hidden income and asset dissipation — structured for depositions, mediations, and trial exhibits across multiple practice areas.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-icon">📋</div>
+        <h3>CDFA Practitioners</h3>
+        <p>Comprehensive financial analysis that supports your settlement recommendations with litigation-ready documentation and data-backed insights.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-icon">🏛</div>
+        <h3>Litigation &amp; Advisory Teams</h3>
+        <p>Scalable document processing, bank statement extraction, and forensic analysis for firms handling complex multi-entity financial disputes.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1416,11 +1354,11 @@ h1, h2, h3, h4 {
     <h2>Let's Review Your <em>Next Case</em> Together</h2>
     <p class="cta-sub">Book a 15-minute call. We'll walk through how our forensic AI engine can support your practice — no commitment, no pitch deck.</p>
     <div class="cta-buttons">
-      <a href="mailto:info@alphaanalyticssol.com?subject=Strategy%20Call%20Request" class="btn-primary" style="font-size:17px;padding:20px 40px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <a href="mailto:info@alphaanalyticssol.com?subject=Strategy%20Call%20Request" class="btn-primary" style="font-size:16px;padding:18px 40px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Book a Free Strategy Call
       </a>
-      <a href="mailto:info@alphaanalyticssol.com?subject=Sample%20Report%20Request" class="btn-secondary" style="font-size:17px;padding:20px 40px;">
+      <a href="mailto:info@alphaanalyticssol.com?subject=Sample%20Report%20Request" class="btn-secondary" style="font-size:16px;padding:18px 40px;">
         Request Sample Report
       </a>
     </div>
@@ -1446,7 +1384,7 @@ h1, h2, h3, h4 {
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#top" class="nav-logo" style="margin-bottom:8px;">
+        <a href="#top" class="nav-logo" style="margin-bottom:4px;">
           <img src="./images/logo.png" alt="Alpha Applied Analytics Solutions">
           <div class="nav-logo-text">Alpha <span class="accent">Applied</span><br>Analytics Solutions</div>
         </a>
@@ -1466,10 +1404,11 @@ h1, h2, h3, h4 {
         <a href="#platform">Bank Extraction</a>
         <a href="#platform">Quality Control AI</a>
         <a href="#platform">PDF Processing</a>
+        <a href="#platform">Coverage Tracker</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="#" onclick="openPrivacyPolicy(); return false;">Privacy Policy</a>
         <a href="#" onclick="alert('Terms of Service — Coming Soon'); return false;">Terms of Service</a>
@@ -1485,32 +1424,44 @@ h1, h2, h3, h4 {
   </div>
 </footer>
 
-<!-- ===== PRIVACY MODAL ===== -->
+<!-- ===== PRIVACY POLICY MODAL ===== -->
 <div class="modal-overlay" id="privacyModal">
   <div class="modal-content">
     <button class="modal-close" onclick="closePrivacyPolicy()">✕</button>
     <h2>Privacy Policy</h2>
     <p class="policy-date">Last updated: April 1, 2026</p>
-    <p>At Alpha Applied Analytics Solutions, your privacy is paramount. We protect personal and confidential information with the highest standards.</p>
+
+    <p>At Alpha Applied Analytics Solutions ("we," "us," or "our"), your privacy is of utmost importance. We are committed to protecting the personal and confidential information entrusted to us by our clients, partners, and website visitors. This Privacy Policy explains how we collect, use, store, and safeguard your information.</p>
+
     <h3>1. Information We Collect</h3>
-    <p>Personal Information: Name, email, phone number provided voluntarily when contacting us or scheduling consultations.</p>
-    <p>Client Data: Financial documents and legal records provided for forensic analysis, treated with strict confidentiality.</p>
-    <h3>2. Purpose & Retention</h3>
-    <p>We collect personal information solely for responding to inquiries, performing contracted services, and improving our offerings. Data is retained only as long as necessary for these purposes.</p>
-    <h3>3. Security</h3>
-    <p>We implement encryption, access controls, secure storage, and NDAs to safeguard all information.</p>
-    <h3>4. Your Rights</h3>
-    <p>You may request access, correction, or deletion of your personal data at any time.</p>
-    <h3>5. Contact Us</h3>
-    <p>Email: <a href="mailto:info@alphaanalyticssol.com" style="color:var(--primary-red);">info@alphaanalyticssol.com</a></p>
+    <p>We may collect the following types of information when you interact with our website or engage our services:</p>
+    <p><strong>Personal Information:</strong> Name, email address, phone number, company name, and job title — provided voluntarily when you contact us, schedule a consultation, or submit an inquiry through our website.</p>
+    <p><strong>Client Data:</strong> Financial documents, bank statements, and other legal records provided to us in the course of performing forensic analysis and litigation support services. This data is treated with the highest level of confidentiality.</p>
+    <p><strong>Usage Data:</strong> Non-personally identifiable information such as browser type, IP address, pages visited, and time spent on our website, collected automatically through standard web technologies.</p>
+
+    <h3>2. Purpose of Data Collection</h3>
+    <p>Before or at the time of collecting personal information, we identify the purposes for which such information is being collected. We collect and use personal information solely for the purpose of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.</p>
+
+    <h3>3. Data Security</h3>
+    <p>We take the security of your information seriously. We protect personal information and client data by implementing reasonable security safeguards against loss, theft, unauthorized access, disclosure, copying, use, or modification. These safeguards include encrypted data transmission, access controls, secure storage environments, and execution of NDAs with clients.</p>
+
+    <h3>4. Contact Us</h3>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data handling practices, please contact us at:</p>
+    <p><strong>Alpha Applied Analytics Solutions</strong><br>
+    Email: <a href="mailto:info@alphaanalyticssol.com" style="color:var(--crimson);">info@alphaanalyticssol.com</a><br>
+    LinkedIn: <a href="https://www.linkedin.com/company/alpha-applied-analytics-solutions" target="_blank" style="color:var(--crimson);">Alpha Applied Analytics Solutions</a></p>
+
+    <p style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--slate);">We are committed to conducting our business in accordance with these principles to ensure that the confidentiality of personal information is protected and maintained. Your trust is our priority.</p>
   </div>
 </div>
 
 <script>
+// Navbar scroll effect
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
 });
 
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
@@ -1525,6 +1476,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Privacy Policy Modal
 function openPrivacyPolicy() {
   document.getElementById('privacyModal').classList.add('active');
   document.body.style.overflow = 'hidden';
