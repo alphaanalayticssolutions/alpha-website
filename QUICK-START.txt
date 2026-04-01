@@ -1,127 +1,70 @@
-# ✅ EXACT CHANGES NEEDED - YOUR REFERENCE FILE
+============================================================
+✅ SERVICE PAGES CONSOLIDATED - CLEANER STRUCTURE
+============================================================
 
-Your reference file (alpha-analytics-website-v2.html) is PERFECT!
+BEFORE (Too many separate sections):
+------------------------------------------------------------
+✗ Hero section (1 image)
+✗ Image Section 1 (1 image + short text)
+✗ Image Section 2 (1 image + short text)  
+✗ Image Section 3 (1 image + short text)
+✗ Feature cards (6 images)
+------------------------------------------------------------
+Total: 10 images per page, fragmented content
 
-Just make these 3 TINY changes:
+AFTER (Consolidated & flowing):
+------------------------------------------------------------
+✓ Hero section (1 image)
+✓ ONE Overview Section (1 image + comprehensive text)
+✓ Feature cards (6 images)
+------------------------------------------------------------
+Total: 8 images per page, unified narrative
 
-## 1. LOGO FIX (Line 996)
+============================================================
+CHANGES PER SERVICE:
+============================================================
 
-**CHANGE FROM:**
-```html
-<svg width="46" height="46" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M60 8 L15 108 L35 108 L60 52 L85 108 L105 108 Z" fill="#8BADD4" opacity="0.5"/>
-  <path d="M52 8 L8 108 L28 108 L52 52 L72 95 L62 108 L98 108 L52 8Z" fill="#1A5DAB"/>
-  <path d="M60 8 L100 95 L72 95 L52 52 Z" fill="#D42B2B"/>
-  <path d="M80 100 L100 100 L100 108 L80 108 Z" fill="#D42B2B"/>
-  <path d="M34 78 L50 78 L52 72 L38 72 Z" fill="#1A5DAB" opacity="0.7"/>
-</svg>
-```
+DIVORCE & FAMILY LAW
+- Consolidated: Income Analysis, Asset Tracing, Lifestyle Analysis
+- Into: "Comprehensive Financial Analysis for Family Law"
+- Images: 10 → 8 ✓
 
-**CHANGE TO:**
-```html
-<img src="./images/logo.png" alt="Alpha Analytics" width="46" height="46">
-```
+ECONOMIC DAMAGES
+- Consolidated: Lost Profits, Forensic Accounting, Market Analysis
+- Into: "Expert Economic Damage Quantification"
+- Images: 10 → 8 ✓
 
-Also do the SAME for the footer logo (line 1448) - change to:
-```html
-<img src="./images/logo.png" alt="Alpha Analytics" width="36" height="36">
-```
+DOCUMENT ANALYSIS
+- Consolidated: Bank Statement Analysis, Data Structuring, Red Flag ID
+- Into: "AI-Powered Financial Document Analysis"
+- Images: 10 → 8 ✓
 
----
+BANKRUPTCY & RESTRUCTURING
+- Consolidated: Financial Position, Creditor Review, Cash Flow
+- Into: "Bankruptcy & Restructuring Financial Analysis"
+- Images: 10 → 8 ✓
 
-## 2. HERO BACKGROUND IMAGE (Line 144-165 in CSS)
+INTELLECTUAL PROPERTY
+- Consolidated: IP Valuation, Infringement Damage, Market Impact
+- Into: "Intellectual Property Damage Analysis"
+- Images: 10 → 8 ✓
 
-**CHANGE FROM:**
-```css
-.hero {
-  padding: 160px 32px 100px;
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(197,165,114,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(185,28,28,0.06) 0%, transparent 50%);
-}
-```
+LITIGATION SUPPORT
+- Consolidated: Financial Data Analysis, Case Support, Expert Assistance
+- Into: "Comprehensive Litigation Support Services"
+- Images: 10 → 8 ✓
 
-**CHANGE TO:**
-```css
-.hero {
-  padding: 160px 32px 100px;
-  background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80') center/cover;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(11,29,51,0.92) 0%, rgba(18,42,74,0.88) 100%);
-  z-index: 1;
-}
-```
+============================================================
+BENEFITS:
+============================================================
+✓ Less visual clutter (20% fewer images)
+✓ More cohesive narrative (flowing paragraphs vs fragmented)
+✓ Faster page load (fewer images to download)
+✓ Easier to read (one unified overview vs jumping sections)
+✓ Still visually rich (8 images = hero + overview + 6 cards)
+✓ Professional appearance maintained
 
-Add `z-index: 2;` to `.hero::after` and `z-index: 3;` to `.hero-inner`
-
----
-
-## 3. BETTER FOOTER (Line 817-821 in CSS)
-
-**CHANGE FROM:**
-```css
-.footer {
-  background: #070F1A;
-  padding: 64px 32px 32px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-```
-
-**CHANGE TO:**
-```css
-.footer {
-  background: linear-gradient(135deg, #0B1D33 0%, #122A4A 100%);
-  padding: 64px 32px 32px;
-  border-top: 3px solid var(--crimson);
-  position: relative;
-}
-.footer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 20% 50%, rgba(185,28,28,0.08) 0%, transparent 50%);
-  pointer-events: none;
-}
-.footer-inner { position: relative; z-index: 1; }
-```
-
-Also change `.footer-bottom` border to:
-```css
-border-top: 1px solid rgba(255,255,255,0.1);
-```
-
----
-
-## ✅ THAT'S IT!
-
-- Logo: SVG → image file
-- Hero: Add background image with navy overlay
-- Footer: Navy gradient + red border instead of black
-
-Everything else stays EXACTLY the same!
-
-Your reference file already has:
-✅ All content perfect
-✅ All sections complete 
-✅ All styles inline
-✅ All JavaScript included
-✅ Clickable buttons working
-✅ Mobile responsive
-✅ Privacy modal
-✅ Everything!
-
-Just make these 3 tiny changes and you're done! 🎉
+============================================================
+TOTAL IMAGES: 48 across 6 services (was 60)
+ALL IMAGES: Still 100% unique with zero duplicates
+============================================================
