@@ -989,7 +989,7 @@ h1, h2, h3, h4 {
       <li><a href="#top">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#platform">Platform</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#how-it-works">About</a></li>
       <li><a href="#contact" class="nav-cta">Book a Call →</a></li>
     </ul>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -1116,7 +1116,7 @@ h1, h2, h3, h4 {
 </section>
 
 <!-- ===== HOW IT WORKS ===== -->
-<section class="how-it-works" id="about">
+<section class="how-it-works" id="how-it-works">
   <div class="section-header">
     <span class="section-label">How It Works</span>
     <h2>What Takes 40 Hours by Hand, We Do in 10</h2>
@@ -1259,14 +1259,39 @@ h1, h2, h3, h4 {
         </div>
       </div>
       <div class="tool-visual">
-        <div style="font-size:11px;color:var(--gold);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">6-Tab Forensic Report</div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="padding:10px 14px;background:rgba(185,28,28,0.2);border-radius:6px;font-size:12px;color:#FCA5A5;font-weight:500;">● Anomaly Report (High-Risk Scoring)</div>
-          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● Account Transaction Heatmap</div>
-          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● Matched Interbank Transfers</div>
-          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● Earning Analysis</div>
-          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● Spend Analysis</div>
-          <div style="padding:10px 14px;background:rgba(255,255,255,0.06);border-radius:6px;font-size:12px;color:rgba(255,255,255,0.7);">● AI Narrative Insights</div>
+        <div style="font-size:11px;color:var(--gold);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Anomaly Report Preview</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:grid;grid-template-columns:70px 1fr 60px 50px;gap:8px;padding:8px 10px;background:rgba(255,255,255,0.04);border-radius:4px;font-size:10px;color:var(--slate-light);font-weight:600;">
+            <span>DATE</span><span>DESCRIPTION</span><span>DEBIT</span><span>SCORE</span>
+          </div>
+          <div style="display:grid;grid-template-columns:70px 1fr 60px 50px;gap:8px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:4px;font-size:11px;">
+            <span style="color:rgba(255,255,255,0.5);">03-15-24</span>
+            <span style="color:rgba(255,255,255,0.75);">WIRE TRF OFFSHORE</span>
+            <span style="color:#FCA5A5;font-weight:600;">$47,200</span>
+            <span style="color:#FCA5A5;font-weight:700;">9.2</span>
+          </div>
+          <div style="display:grid;grid-template-columns:70px 1fr 60px 50px;gap:8px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:4px;font-size:11px;">
+            <span style="color:rgba(255,255,255,0.5);">03-22-24</span>
+            <span style="color:rgba(255,255,255,0.75);">VENMO *UNDISCLOSED</span>
+            <span style="color:#FCA5A5;font-weight:600;">$8,500</span>
+            <span style="color:#FCA5A5;font-weight:700;">8.7</span>
+          </div>
+          <div style="display:grid;grid-template-columns:70px 1fr 60px 50px;gap:8px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:4px;font-size:11px;">
+            <span style="color:rgba(255,255,255,0.5);">04-01-24</span>
+            <span style="color:rgba(255,255,255,0.75);">ATM WITHDRAWAL</span>
+            <span style="color:#FCA5A5;font-weight:600;">$15,000</span>
+            <span style="color:#FCA5A5;font-weight:700;">8.1</span>
+          </div>
+          <div style="display:grid;grid-template-columns:70px 1fr 60px 50px;gap:8px;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:4px;font-size:11px;">
+            <span style="color:rgba(255,255,255,0.5);">04-11-24</span>
+            <span style="color:rgba(255,255,255,0.75);">CHECK #4472</span>
+            <span style="color:#FCA5A5;font-weight:600;">$22,750</span>
+            <span style="color:#FCA5A5;font-weight:700;">7.9</span>
+          </div>
+        </div>
+        <div style="margin-top:12px;padding:10px 14px;background:rgba(185,28,28,0.12);border:1px solid rgba(185,28,28,0.2);border-radius:6px;display:flex;align-items:center;gap:8px;">
+          <div style="width:20px;height:20px;background:rgba(185,28,28,0.2);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#FCA5A5;">⚠</div>
+          <span style="font-size:11px;color:#FCA5A5;font-weight:500;">4 high-risk anomalies detected</span>
         </div>
       </div>
     </div>
@@ -1419,7 +1444,7 @@ h1, h2, h3, h4 {
       <div class="footer-brand">
         <a href="#top" class="nav-logo" style="margin-bottom:4px;">
           <img src="./images/logo.png" alt="Alpha Applied Analytics Solutions">
-          <div class="nav-logo-text">Alpha <span class="accent">Applied</span><br>Analytics Solutions</div>
+          <div class="nav-logo-text" style="color: white !important;">Alpha <span class="accent" style="color: var(--crimson) !important;">Applied</span><br>Analytics Solutions</div>
         </a>
         <p>AI-powered forensic financial analysis for attorneys, CDFAs, and litigation teams worldwide.</p>
       </div>
@@ -1441,7 +1466,7 @@ h1, h2, h3, h4 {
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="#about">About</a>
+        <a href="#how-it-works">About</a>
         <a href="#contact">Contact</a>
         <a href="#" onclick="openPrivacyPolicy(); return false;">Privacy Policy</a>
         <a href="#" onclick="alert('Terms of Service — Coming Soon'); return false;">Terms of Service</a>
